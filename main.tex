@@ -1,5 +1,5 @@
 \documentclass[compress]{beamer}
-\usepackage{euscript,amsmath,amssymb,amsfonts,amsthm,epsfig,subfigure,color,graphicx}
+\usepackage{euscript,amsmath,amssymb,amsfonts,amsthm,epsfig,subfigure,color,graphicx,enumitem}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
@@ -21,7 +21,7 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}[frame number]
 %\setbeamertemplate{itemize items}{$\multimapdotinv$}
-\setbeamertemplate{itemize items}{\textbf{$\strictfi$}}
+%\setbeamertemplate{itemize items}{\textbf{$\strictfi$}}
 \setbeamertemplate{enumerate items}[circle]
 \setbeamertemplate{section in toc}[circle]
 %\useoutertheme{infolines}
@@ -63,13 +63,10 @@
 % \includegraphics[height=1.5cm]{figures/logoCnrs}
 }
 
-
 \date[]{14 Novembre 2019}
 
 \logo{\includegraphics[height=.6cm]{figures/logoCnrs}}
-
-
-
+\setlist{label=\textrm{--}}
 \begin{document}
 % Update itemize to have a default overlay
 %\renewcommand{\itemize}[1][<+(1)->]{\olditemize[#1]}
@@ -82,15 +79,142 @@
 % show section lists
 \begin{frame}{Agenda} \tableofcontents \end{frame} % [pausesections]
 
-  \section{Curriculum Vit\ae} 2
+\section{Curriculum Vit\ae}
 
-  \section[Tâches]{Tâches en traitement du signal audio-numérique} 6
+\begin{frame}{Statut}
+\begin{block}{Chargé de recherche CNRS classe normale}
+\begin{description}
+\item[2009] : recrutement par la commission interdisciplinaire (CID) 44 : \og Cognition, langage, traitement de l’information, systèmes \fg
+\item[2012] : rattachement à la section 07 : \og Sciences de l'information \fg
+\end{description}
+\end{block}
+\begin{block}{Qualifications CNU}
+\begin{itemize}
+\item section 27 : \og Informatique \fg
+\item section 61 : \og Génie informatique, automatique et traitement du signal \fg
+\end{itemize}
+\end{block}
+\end{frame}
 
-  \section[CASA]{Analyse computationnelle de scènes auditives (CASA)} 10
+\begin{frame}{Diplômes}
+\begin{block}{Master Informatique (2001)}
+\begin{description}
+\item[Intitulé] : \og Accélération de la synthèse sonore \fg 
+\item[Encadrement] : Sylvain Marchand 
+\item[Lieu de soutenance] : Université de Bordeaux 1
+\end{description}
+\end{block}
+\begin{block}{Doctorat Informatique (2004)}
+\begin{description}
+\item[Intitulé] : \og Modélisation long terme des signaux polyphoniques \fg 
+\item[Direction] : par Myriam Desainte-Catherine
+\item[Encadrement] : Sylvain Marchand et Jean-Bernard Rault 
+\item[Lieu de soutenance] : Université de Bordeaux 1 
+\end{description}
+\end{block}
+\end{frame}
 
-  \section[Expérimentation]{Expérimentation en traitement du signal audio-numérique} 18
 
-  \section[Projet]{Projet de recherche} 10
+\begin{frame}{Carrière}
+\small 
+    \begin{tabular}{ll}
+  2001-4 & {\bf Doctorant Université Bordeaux 1} \\
+  &  Ingénieur de Recherche  à France Télécom R\&D Rennes \\
+  & TECH/IRIS (équipe codage et multimédia) \\
+  2004-5 & {\bf Enseignant chercheur (ATER)} au LaBRI (U. Bx. 1)  \\
+  2005-6 & {\bf Enseignant chercheur (ATER)}  à l'Enseirb (U. Bx. 1) \\
+  2006-7 & {\bf Post-doctorant} au sein du département d'informatique \\
+  &  Université de Victoria, BC, Canada \\
+ 2007-8 &  {\bf Post-doctorant} au sein du département "Music Technology"  \\
+  &  Université de McGill, QC, Canada \\
+ 2008-9 &  {\bf Post-doctorant} au sein de  l'équipe    \\
+  & \og Acoustique Audio et Ondes \fg, Télécom ParisTech \\
+ 2009-13 &  {\bf Chercheur CNRS} au sein de l'équipe Analyse / Synthèse  \\
+  & Ircam (Umr 9912), Paris \\
+ 2013- -- &  {\bf Chercheur CNRS} au sein de l'équipe \\
+ & Signal, Images et Son (Sims)  \\
+  & Ls2n (Umr 6004), Ecole Centrale de Nantes \\
+\end{tabular}
+\end{frame}
+
+
+\begin{frame}{Contributions}
+
+\begin{block}{Indices bibliométriques}
+\begin{itemize}
+\item 21 revues internationales à comité de lecture
+\item 62 conférences internationales à comité de lecture
+\item citations: 1784 (source Google Scholar, Oct. 2019)
+\item indice h: 19 (source Google Scholar, Oct. 2019)
+\end{itemize}
+\end{block}
+\begin{block}{Responsabilités}
+\begin{itemize}
+\item relecteur pour diverses revues et conférences du domaine 
+\item adjoint à la direction de l'équipe SIMS (2018)
+\item membre du comité directeur d'association sportive de l'\'Ecole Centrale Nantes
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Encadrement}
+\begin{itemize}
+  \item Rémi Foucard (2010 - 2013): \og Fusion multi-niveaux par boosting pour le tagging automatique \fg
+  \item Grégoire Lafay (2013 - 2016): \og Simulation de scènes sonores environnementales : application à l'analyse sensorielle et à l'analyse automatique \fg
+  \item Jean-Rémy Gloaguen (2015 - 2018): \og Estimation du niveau sonore de sources d'intérêt au sein de mélanges sonores urbains : application au trafic routier \fg
+  \item Félix Gontier (2017 - --): \og Modélisation de signaux sonores par approches neuronales profondes \fg
+  \item Tom Souaille (2019 - --): \og Conception interactive en design sonore \fg
+\end{itemize}
+\end{frame}
+
+\section[Tâches]{Tâches en traitement du signal audio-numérique}
+
+
+\begin{frame}{Traitement du signal audio-numérique}
+\begin{block}{Besoins et tâches associées}
+\begin{itemize}
+\item Transmission : Codage
+\item Indexation : Recherche d'Information (IR)
+\item Création : Synthèse sonore
+\end{itemize}
+\end{block}
+\begin{block}{Domaines d'application}
+\begin{itemize}
+\item Musique
+\item Sons environnementaux
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Besoins de compacité}
+\begin{block}{Verrou}
+\begin{itemize}
+\item une seconde de son : $$ x \in \mathbb{R}^{44100}$$
+\item besoin de compacité
+\end{itemize}
+\end{block}
+\begin{block}{Types de compacité}
+\begin{itemize}
+\item Codage : compacité signal
+\item Recherche d'Information : compacité sémantique
+\item Synthèse : ??
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\section[CASA]{Analyse computationnelle de scènes auditives (CASA)} 10
+
+
+
+Ca ne marche pas, mais je peux dire pourquoi
+Ca marche, mais je ne peux pas dire pas pourquoi
+
+\section[Expérimentation]{Expérimentation en traitement du signal audio-numérique} 18
+
+\section[Projet]{Projet de recherche} 10
+
 
 % show subsection list
 \begin{frame}{} \tableofcontents[currentsection] \end{frame}
