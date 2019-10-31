@@ -191,22 +191,55 @@
 \begin{block}{Verrou}
 \begin{itemize}
 \item une seconde de son : $$ x \in \mathbb{R}^{44100}$$
-\item besoin de compacité
+\item besoin d'une représentation $y$ plus compacte
 \end{itemize}
 \end{block}
 \begin{block}{Types de compacité}
 \begin{itemize}
-\item Codage : compacité signal
-\item Recherche d'Information : compacité sémantique
-\item Synthèse : ??
+\item Codage : compacité signal ($ y \in \mathbb{R}^{5000}$)
+\item Recherche d'Information : compacité sémantique ($ y \in \mathbb{N}^{100}$)
+\item Synthèse : compacité \structure{signalo-sémantique} ?? ($ y \in \mathbb{R}^{100}$)
 \end{itemize}
 \end{block}
 \end{frame}
 
+\section[CASA]{Analyse computationnelle de scènes auditives (CASA)}
 
-\section[CASA]{Analyse computationnelle de scènes auditives (CASA)} 10
+\begin{frame}{Codage par transformée}
+
+$$y = C(x) \in \mathbb{R}^Y | x \in \mathbb{R}^{X} \tilde{x} = C^{-1}(y), P_e(x) \simeq P_e(\tilde{x})$$
+\begin{itemize}
+\item $C$ : Quantification adaptative d'un équivalent de la Transformée de Fourier à Court Terme (TFCT)
+\item $P_e$ : Modélisation de la sensibilité aux déformations de la membrane basilaire\citenote{Zwicker}{}{}{}
+\end{itemize}
+Gain : $Y<<X$
+Validation : écoute
+\end{frame}
+
+TFCT
+
+Compromis temps/fréquence verrou resolution adaptative
 
 
+Contourner ce compromis par l'utilisation d' a priori sur les sources d'intérêt
+
+Exemple ASA modulations
+
+Modele sinusoidal long terme
+
+Analyse a court terme
+
+Tracking lentement predictible et ne pas générer de hautes fréquences
+
+casa
+
+asa  (ref ellis)
+
+normalized cuts
+
+houle
+
+constat
 
 Ca ne marche pas, mais je peux dire pourquoi
 Ca marche, mais je ne peux pas dire pas pourquoi
