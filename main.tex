@@ -4,7 +4,7 @@
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
 \setcounter{page}{1}
-\usepackage{pgf}
+\usepackage{pgf,csquotes}
 \usepackage{tikz}
 \newsavebox{\mysavebox}
 %\usepackage[autolinebreaks,useliterate]{mcode}
@@ -12,6 +12,24 @@
 \usepackage{letltxmacro}
 \LetLtxMacro\olditemize\itemize
 \LetLtxMacro\oldenumerate\enumerate
+
+\usepackage[doi=false,
+            isbn=false,
+            url=false,
+            bibstyle=authoryear,
+            style=authoryear,
+            backend=bibtex]{biblatex}
+\AtEveryCitekey{%\clearfield{title}
+    \clearfield{note}
+    \clearfield{pages}
+    \clearlist{location}
+    \clearlist{publisher}
+    \clearname{editor}}
+\renewcommand*{\multicitedelim}{\\}
+
+\addbibresource{bib.bib}
+\addbibresource{references.bib}
+\addbibresource{journals.bib}
 
 \usepackage{beamerthemedefault, multimedia, wasysym, amssymb, kpfonts}
 
@@ -39,9 +57,9 @@
 {\structure{\includegraphics[keepaspectratio,width=.5cm]{figures/play}}}{#1}}
 
 % footnote without numbers
-\let\oldfootnote\footnote
-\renewcommand\footnote[1]{\let\thefootnote\relax%
-\oldfootnote{#1}}
+% \let\oldfootnote\footnote
+% \renewcommand\footnote[1]{\let\thefootnote\relax%
+% \oldfootnote{#1}}
 
 % title, url, authors, extensions
 \newcommand\citenote[4]{\footnote{#3 \href{#2}{\structure{#1}} #4}}
@@ -107,7 +125,7 @@
 \begin{block}{Doctorat Informatique (2004)}
 \begin{description}
 \item[Intitulé] : \og Modélisation long terme des signaux polyphoniques \fg 
-\item[Direction] : par Myriam Desainte-Catherine
+\item[Direction] : Myriam Desainte-Catherine
 \item[Encadrement] : Sylvain Marchand et Jean-Bernard Rault 
 \item[Lieu de soutenance] : Université de Bordeaux 1 
 \end{description}
@@ -198,7 +216,7 @@
 \begin{itemize}
 \item Codage : compacité signal ($ y \in \mathbb{R}^{5000}$)
 \item Recherche d'Information : compacité sémantique ($ y \in \mathbb{N}^{100}$)
-\item Synthèse : compacité \structure{signalo-sémantique} ?? ($ y \in \mathbb{R}^{100}$)
+\item Synthèse : compacité \alert{\og} \structure{signalo-sémantique} \alert{\fg} ($ y \in \mathbb{R}^{100}$)
 \end{itemize}
 \end{block}
 \end{frame}
@@ -216,12 +234,46 @@ Gain : $Y<<X$
 Validation : écoute
 \end{frame}
 
-TFCT
+\begin{frame}{Transformée de Fourier à Court Terme (TFCT)}
+$$ X[m, t] = \sum_{n = - \infty}^{\infty} x[n] w[n-t] \mathrm{e}^{\frac{-2 \mathrm{j}  \pi m n}{N}} $$ 
+\begin{center}
+\includegraphics[width=.6\columnwidth]{figures/play} \\
+\end{center}
+\end{frame}
 
-Compromis temps/fréquence verrou resolution adaptative
+\begin{frame}{Compromis temps/fréquence}
+\begin{center}
+\includegraphics[width=.6\columnwidth]{figures/play}
+\includegraphics[width=.6\columnwidth]{figures/play} \\
+\end{center}
+\end{frame}
 
+\begin{frame}{Typologie des évènements sonores}
+\begin{description}
+  \item[parole] : sons voisés <a>, <o> / sons plosifs <pe>, <qe>;
+  \item[communication animale] : hululement de chouettes / clics de localisation de chauve souris;
+  \item[musique] : chant lyrique / percussions;
+  \item[mécanique] : ventilation / marteau piqueur;
+  \item[environnementaux] : vent faisant siffler des câbles / gouttes de pluie tombant sporadiquement.
+\end{description}
+\end{frame}
 
-Contourner ce compromis par l'utilisation d' a priori sur les sources d'intérêt
+\begin{frame}{Compromis temps/fréquence}
+\begin{center}
+\includegraphics[width=.4\columnwidth]{figures/play} 
+\includegraphics[width=.4\columnwidth]{figures/play} \\
+\end{center}
+	$\hookrightarrow{}$ mitiger ce compromis imposée par l'approche court-terme par l'utilisation d'\alert{\textit{a priori}} sur les sources d'intérêt.
+\end{frame}
+
+\begin{frame}{Analyse de Scènes Auditives (ASA)}
+L'ASA\footfullcite{bregman1994auditory} étudie l'ensemble de traitements perceptifs permettant
+\begin{itemize}
+\item d'isoler les informations émanant de sources distinctes,
+\item de les organiser en un tout cohérent.
+\end{itemize}
+\end{frame}
+
 
 Exemple ASA modulations
 
@@ -230,6 +282,14 @@ Modele sinusoidal long terme
 Analyse a court terme
 
 Tracking lentement predictible et ne pas générer de hautes fréquences
+
+critère de continuation un critère de formation de sources parmi d'autres
+
+asa
+
+criteres instantanés
+
+critères 
 
 casa
 
@@ -242,7 +302,7 @@ houle
 constat
 
 Ca ne marche pas, mais je peux dire pourquoi
-Ca marche, mais je ne peux pas dire pas pourquoi
+Ca marche, mais je ne peux pas trop dire pourquoi
 
 \section[Expérimentation]{Expérimentation en traitement du signal audio-numérique} 18
 
