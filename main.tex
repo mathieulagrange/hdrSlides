@@ -19,8 +19,10 @@
             isbn=false,
             url=false,
             bibstyle=authoryear,
+            backend=biber,
             style=authoryear]{biblatex} %, backend=bibtex
 \AtEveryCitekey{%\clearfield{title}
+    \scriptsize
     \clearfield{note}
     \clearfield{pages}
     \clearlist{location}
@@ -28,9 +30,13 @@
     \clearname{editor}}
 \renewcommand*{\multicitedelim}{\\}
 
+
+\addbibresource{bib/strings.bib}
+\addbibresource{bib/stringsShort.bib}
 \addbibresource{bib/bib.bib}
 \addbibresource{bib/references.bib}
 \addbibresource{bib/journals.bib}
+\addbibresource{bib/conferences.bib}
 
 \usepackage{beamerthemedefault, multimedia, wasysym, amssymb, kpfonts}
 
@@ -51,8 +57,6 @@
 \definecolor{green}{rgb}{0.8 ,.9, 0.8}
 \definecolor{blue}{rgb}{0.3, 0 ,0.6}
 
-\graphicspath{{./}{../}}
-
 \newcommand{\includesound}[1]{
 \movie[]%
 {\structure{\includegraphics[keepaspectratio,width=.5cm]{figures/play}}}{#1}}
@@ -61,6 +65,24 @@
 % \let\oldfootnote\footnote
 % \renewcommand\footnote[1]{\let\thefootnote\relax%
 % \oldfootnote{#1}}
+
+\newrobustcmd*{\footfullcitenomark}{%
+  \AtNextCite{%
+    \let\thefootnote\relax
+    \let\mkbibfootnote\mkbibfootnotetext}%
+  \footfullcite}
+  
+  \defbeamertemplate*{footnotetext}{default}{%
+  %\parindent 1em\noindent%
+  \raggedright
+  %\hbox to 1.8em{\hfil\insertfootnotemark}%
+  \insertfootnotetext\par}
+
+\newrobustcmd*{\footfullcitenomarkleft}{%
+  \AtNextCite{%
+    \setbeamertemplate{footnote}{\usebeamertemplate{footnotetext}}%
+    \let\mkbibfootnote\mkbibfootnotetext}%
+  \footfullcite}
 
 % title, url, authors, extensions
 \newcommand\citenote[4]{\footnote{#3 \href{#2}{\structure{#1}} #4}}
@@ -98,16 +120,23 @@
 % show section lists
 \begin{frame}{Agenda} \tableofcontents \end{frame} % [pausesections]
 
-\input{cv.tex}
+\section[Cv]{Curriculum Vit\ae}\input{cv.tex}
 
-\input{task.tex}
+\section[Tâches]{Tâches en traitement du signal audio-numérique} \input{task.tex}
 
+\section[CASA]{Analyse computationnelle de scènes auditives (CASA)}
 \input{casa.tex}
 
 
-\section[Expérimentation]{Expérimentation en traitement du signal audio-numérique} 18
+\section[Expérimentation]{Expérimentation en traitement du signal audio-numérique} \input{exp.tex}
 
-\section[Projet]{Projet de recherche} 10
+\section[Projet]{Projet de recherche} 
+
+\input{proj.tex}
+ 
+
+
+
 
 
 % show subsection list

@@ -1,11 +1,8 @@
-\section[CASA]{Analyse computationnelle de scènes auditives (CASA)}
-
-\begin{frame}{Codage par transformée}
-
+\begin{frame}{\alert{Tâche} : Codage par transformée}
 $$y = C(x) \in \mathbb{R}^Y | x \in \mathbb{R}^{X} \tilde{x} = C^{-1}(y), P_e(x) \simeq P_e(\tilde{x})$$
 \begin{itemize}
 \item $C$ : Quantification adaptative d'un équivalent de la Transformée de Fourier à Court Terme (TFCT)
-\item $P_e$ : Modélisation de la sensibilité aux déformations de la membrane basilaire\citenote{Zwicker}{}{}{}
+\item $P_e$ : Modélisation de la sensibilité aux déformations de la membrane basilaire\footfullcitenomarkleft{Zwicker}{}{}{}
 \end{itemize}
 Gain : $Y<<X$
 Validation : écoute
@@ -15,11 +12,10 @@ Validation : écoute
 $$ X[m, t] = \sum_{n = - \infty}^{\infty} x[n] w[n-t] \mathrm{e}^{\frac{-2 \mathrm{j}  \pi m n}{N}} $$
 \end{frame}
 
-\begin{frame}{Spectrogramme}
+\begin{frame}{Spectrogramme : $|X[m, t]|$}
 \begin{center}
-\includegraphics[width=.8\columnwidth]{figures/tfct} \\
+\includegraphics[width=.9\columnwidth]{figures/tfct} \\
 \end{center}
-Spectrogramme : $|X[m, t]|$
 \end{frame}
 
 \begin{frame}{Typologie des évènements sonores}
@@ -36,17 +32,17 @@ Spectrogramme : $|X[m, t]|$
 \begin{center}
 \includegraphics[width=.7\columnwidth]{figures/soloSpec} 
 \end{center}
-	$\hookrightarrow{}$ mitiger ce compromis imposée par l'approche court-terme par l'utilisation d'\alert{\textit{a prioris}} sur les sources d'intérêt.
+	$\hookrightarrow{}$ mitiger cette contrainte imposée par l'approche court-terme par l'utilisation d'\alert{\textit{a priori}} sur les sources d'intérêt.
 \end{frame}
 
 \begin{frame}{Analyse de Scènes Auditives Computationelle (CASA)}
-L'ASA\footfullcite{bregman1994auditory} étudie l'ensemble de traitements perceptifs permettant
+L'ASA\footfullcitenomarkleft{bregman1994auditory} étudie l'ensemble de traitements perceptifs permettant
 \begin{itemize}
 \item d'isoler les informations émanant d'\structure{entités} sonores distinctes,
 \item de les organiser en un tout cohérent.
 \item à l'aide de processus \structure{\og primitifs \fg} et \structure{\og séquentiels \fg}.
 \end{itemize}
-L'Analyse de Scènes Auditives Computationnelle (CASA)\fullcitenote{wang2016casa} se propose de mettre en \oe~euvre ces critères pour inférer une organisation perceptuellement valide de la scène sonore.
+L'Analyse de Scènes Auditives Computationnelle (CASA)\footfullcitenomarkleft{wang2016casa} se propose de mettre en \oe~euvre ces critères pour inférer une organisation perceptuellement valide de la scène sonore.
 \end{frame}
 
 \begin{frame}{Processus ASA \og primitifs \fg}
@@ -67,6 +63,8 @@ $a_{l}[n]$ et $f_{l}[n]$ sont des signaux contrôlant respectivement l'amplitude
 \only<2>{mettre le son et la figure} %http://webpages.mcgill.ca/staff/Group2/abregm1/web/snd/Track24.mp3
 \end{frame}
 
+\begin{frame}{Traitement}
+\begin{center}
 \begin{tikzpicture}[
 nonterminal/.append style={join=by ->},
 tip/.style={->,shorten >=1pt},every join/.style={rounded corners},
@@ -81,48 +79,64 @@ point/.style={circle,fill=black,minimum size=2pt},
 %every node/.style=draw,
 line/.style ={draw, thick, -latex',shorten
   >=2pt}]
+  
+  \matrix [column sep=10mm,row sep=5mm]
+{
+\node (i1) {}; \\
+\node [terminal] (i2) {tfct}; \\
+\node [terminal] (i3) {sélection de pics}; \\
+\node [terminal] (i4) {suivi de partiel}; \\
+\node  (i5) {}; \\
+};
+
+\begin{scope}[every path/.style=line]
+  \path (i1) -- node [right] {signal} (i2);
+  \path (i2) -- node [right] {spectrogramme} (i3);
+  \path (i3) -- node [right] {atomes } (i4);
+  \path (i4) -- node [right] {partiels} (i5);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Atomes temps/fréquences}
+\begin{center}
+ \only<1>{\includegraphics[width=.7\textwidth]{voice_1024_512xp} \\
+ Taille de fenêtre : \structure{23} ms, pas d'avancement 10 ms.}
+ \only<2>{\includegraphics[width=.7\textwidth]{voice_2048_512xp} \\
+ Taille de fenêtre : \structure{46} ms, pas d'avancement 10 ms.}
+ \only<3>{\includegraphics[width=.7\textwidth]{voice_4096_512xp} \\
+ Taille de fenêtre : \structure{92} ms, pas d'avancement 10 ms.}
+\end{center}
+\end{frame}
+
+\begin{frame}{Algorithme de suivi amélioré\footfullcitenomarkleft{lagrangeTaslp06}}
+\begin{center}
+  \includegraphics[width=.4\textwidth]{trackingxp2xp2}
+\end{center}
+  \begin{enumerate}
+      \item Prédiction auto-régressive de l'évolution des paramètres de fréquence et d'amplitude
+      \item Sélection des continuations engendrant le moins de hautes fréquences
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Processus ASA \og primitifs \fg}
+\begin{description}
+\item[\alert{continuité}] : les propriétés d'un son isolé tendent à se modifier lentement et de façon continue
+\item[\alert{harmonicité}] : lorsqu'un corps sonore vibre à une période répétée, ses vibrations donnent naissance à un motif acoustique dont les fréquences des composants sont des multiples d'une même fréquence fondamentale;
+\item[...]
+\end{description}
+\end{frame}
+ 
+\begin{frame}{Algorithme par coupures normalisées de graphes}
+\begin{center}
+ \only<1>{\includegraphics[width=.7\textwidth]{orcaSin}}
+ \only<2>{\includegraphics[width=.8\textwidth]{figures/ncutDiagramFr} \footfullcitenomarkleft{shi2000normalized}}
+ \only<3>{\includegraphics[width=.7\textwidth]{orcaSep}  \footfullcitenomarkleft{lagrangeTaslp08}}
+\end{center}
+\end{frame}
 
 
-
-  \begin{tabular}{ccc}
-    (a) & (b) & (c)  \\
-  \includegraphics[width=.3\textwidth]{voice_1024_512xp} &
-  \includegraphics[width=.3\textwidth]{voice_2048_512xp} &
-  \includegraphics[width=.3\textwidth]{voice_4096_512xp} \\
-\end{tabular}
-  \caption{Influence de la taille de fenêtre de la tfct utilisée pour estimer un modèle sinusoïdal à court terme d'un glissando de trombone. De gauche à droite, la taille est de 25 (a), 50 (b), et 100 ms (c), pour un pas d'avancement de 10 ms. Chaque point correspond  à une composante à court terme $p_{t, c}$ et sa taille est fonction de l'amplitude de la composante $a_{t, c}$.}
-
-  \includegraphics[width=.5\textwidth]{trackingxp2xp2}
-\fullcitenote{lagrangeTaslp06}
-
-\begin{tabular}{ccc}
-    (a) & (b) & (c)  \\
-  \includegraphics[width=.333\textwidth]{orcaOriSpec} &
-  \includegraphics[width=.333\textwidth]{orcaSin} &
-  \includegraphics[width=.333\textwidth]{orcaSep} \\
-\end{tabular}
-
-Exemple ASA modulations
-
-Modele sinusoidal long terme
-
-Analyse a court terme
-
-Tracking lentement predictible et ne pas générer de hautes fréquences
-
-critère de continuation un critère de formation de sources parmi d'autres
-
-asa
-
-criteres instantanés
-
-critères 
-
-casa
-
-asa  (ref ellis)
-
-normalized cuts
 
 \begin{frame}{Processus ASA \og séquentiels \fg}
 \begin{description}
@@ -132,11 +146,25 @@ normalized cuts
 \end{description}
 \end{frame}
 
-houle
+\begin{frame}{Regroupement hiérarchique alterné}
+\footfullcitenomarkleft{rossignol2018efficient}
+\footfullcitenomarkleft{rossignolhal-01122006}
+\begin{center}
+   \includegraphics[width=.9\textwidth]{alc_sample}  
+\end{center}
+\end{frame}
 
-constat
-
-long terme mais court terme :/
-
-Ca ne marche pas, mais je peux expliquer pourquoi
-Ca marche, mais je ne peux pas vraiment dire pourquoi
+\begin{frame}{Approches Casa \fg algorithmiques \og}
+\begin{itemize}
+\item Expression d'\textit{a priori} sous forme d'heuristiques computationnelles
+\item Algorithmes de structuration non supervisés
+\end{itemize}
+\begin{block}{Bilan}
+\begin{itemize}
+\item[\textbf{+}] approches long terme : exploitation d'intervalles d'observation long
+\item[\alert{\textbf{-}}] représentation court terme : multi-résolution
+\item[\textbf{+}] pas d'apprentissage : protocole expérimental simple, interprétabilité
+\item[\alert{\textbf{-}}] pas d'apprentissage : tractabilité, efficience
+\end{itemize}
+\end{block}
+\end{frame}
