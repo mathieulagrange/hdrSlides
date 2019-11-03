@@ -1,0 +1,18 @@
+% \documentclass[tikz,border=10pt]{standalone}
+% \usepackage{tikz,pgf}
+% \usetikzlibrary{positioning,shapes,shadows,arrows}
+%
+% \begin{document}
+\begin{tikzpicture}[mystyle]
+\matrix [column sep=10mm,row sep=5mm]
+{
+\node (i1) {X}; &
+\node [terminal] (i2) {p}; &
+\node  (i3) {Y}; \\
+};
+\begin{scope}[every path/.style=line]
+  \path (i1) -- node [left] {} (i2);
+  \path (i2) -- node [right] {} (i3);
+\end{scope}
+\end{tikzpicture}
+% \end{document}

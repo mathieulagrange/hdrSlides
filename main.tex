@@ -6,6 +6,7 @@
 \setcounter{page}{1}
 \usepackage{pgf,csquotes}
 \usepackage{tikz}
+\usetikzlibrary{fit}
 \newsavebox{\mysavebox}
 %\usepackage[autolinebreaks,useliterate]{mcode}
 \usetikzlibrary{arrows,positioning}
@@ -37,6 +38,7 @@
 \addbibresource{bib/references.bib}
 \addbibresource{bib/journals.bib}
 \addbibresource{bib/conferences.bib}
+\addbibresource{bib/software.bib}
 
 \usepackage{beamerthemedefault, multimedia, wasysym, amssymb, kpfonts}
 
@@ -83,7 +85,9 @@
     \setbeamertemplate{footnote}{\usebeamertemplate{footnotetext}}%
     \let\mkbibfootnote\mkbibfootnotetext}%
   \footfullcite}
-
+  
+  
+ 
 % title, url, authors, extensions
 \newcommand\citenote[4]{\footnote{#3 \href{#2}{\structure{#1}} #4}}
 
@@ -109,6 +113,23 @@
 \logo{\includegraphics[height=.6cm]{figures/logoCnrs}}
 \setlist{label=\textrm{--}}
 \begin{document}
+
+\tikzstyle{mystyle}=[
+nonterminal/.append style={join=by ->},
+tip/.style={->,shorten >=1pt},every join/.style={rounded corners},
+terminal/.style={
+% The shape:
+rectangle,minimum size=6mm,rounded corners=1mm,
+% The rest
+very thick,draw=black!50,
+top color=white,bottom color=black!10,
+font=\ttfamily},
+point/.style={circle,fill=black,minimum size=2pt},
+%every node/.style=draw,
+line/.style ={draw, thick, -latex',shorten
+  >=2pt}]
+
+
 % Update itemize to have a default overlay
 %\renewcommand{\itemize}[1][<+(1)->]{\olditemize[#1]}
 %\renewcommand{\enumerate}[1][<+(1)->]{\oldenumerate[#1]}
@@ -120,60 +141,53 @@
 % show section lists
 \begin{frame}{Agenda} \tableofcontents \end{frame} % [pausesections]
 
-\section[Cv]{Curriculum Vit\ae}\input{cv.tex}
-
-\section[Tâches]{Tâches en traitement du signal audio-numérique} \input{task.tex}
-
-\section[CASA]{Analyse computationnelle de scènes auditives (CASA)}
-\input{casa.tex}
-
-
+% \section[Cv]{Curriculum Vit\ae}\input{cv.tex}
+% \section[Tâches]{Tâches en traitement du signal audio-numérique} \input{task.tex}
+% \section[CASA]{Analyse computationnelle de scènes auditives (CASA)}
+% \input{casa.tex}
 \section[Expérimentation]{Expérimentation en traitement du signal audio-numérique} \input{exp.tex}
-
-\section[Projet]{Projet de recherche} 
-
-\input{proj.tex}
+%\section[Projet]{Projet de recherche} \input{proj.tex}
  
-
-
-
-
-
-% show subsection list
-\begin{frame}{} \tableofcontents[currentsection] \end{frame}
-
-\begin{frame}{Figure}
-\begin{center}
-\includegraphics[width=.6\columnwidth]{figures/play} \\
-\end{center}
-\end{frame}
-
-\begin{frame}{Block}
-\begin{block}{title}
-\begin{itemize}
-\item
-\item
-\item
-\end{itemize}
-\end{block}
-\end{frame}
-
-
-\begin{frame}{Itemize}
-\begin{itemize}
-\item
-\item
-\item
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Special}
-\structure{Hey}: ..
-\begin{itemize}
-\item[+]
-\item[--]
-\end{itemize}
-\citenote{title}{http://www.google.com}{author}{infos}
-\end{frame}
-
 \end{document}
+
+
+
+
+% % show subsection list
+% \begin{frame}{} \tableofcontents[currentsection] \end{frame}
+
+% \begin{frame}{Figure}
+% \begin{center}
+% \includegraphics[width=.6\columnwidth]{figures/play} \\
+% \end{center}
+% \end{frame}
+
+% \begin{frame}{Block}
+% \begin{block}{title}
+% \begin{itemize}
+% \item
+% \item
+% \item
+% \end{itemize}
+% \end{block}
+% \end{frame}
+
+
+% \begin{frame}{Itemize}
+% \begin{itemize}
+% \item
+% \item
+% \item
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Special}
+% \structure{Hey}: ..
+% \begin{itemize}
+% \item[+]
+% \item[--]
+% \end{itemize}
+% \citenote{title}{http://www.google.com}{author}{infos}
+% \end{frame}
+
+
