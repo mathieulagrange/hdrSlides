@@ -2,7 +2,7 @@
 $$y = C(x) \in \mathbb{R}^Y | x \in \mathbb{R}^{X} \tilde{x} = C^{-1}(y), P_e(x) \simeq P_e(\tilde{x})$$
 \begin{itemize}
 \item $C$ : Quantification adaptative d'un équivalent de la Transformée de Fourier à Court Terme (TFCT)
-\item $P_e$ : Modélisation de la sensibilité aux déformations de la membrane basilaire\footfullcitenomarkleft{Zwicker}{}{}{}
+\item $P_e$ : Modélisation de la sensibilité aux déformations de la membrane basilaire\footfullcitenomarkleft{zwicker2013psychoacoustics}
 \end{itemize}
 Gain : $Y<<X$
 Validation : écoute
@@ -10,11 +10,25 @@ Validation : écoute
 
 \begin{frame}{Transformée de Fourier à Court Terme (TFCT)}
 $$ X[m, t] = \sum_{n = - \infty}^{\infty} x[n] w[n-t] \mathrm{e}^{\frac{-2 \mathrm{j}  \pi m n}{N}} $$
+\begin{description}
+\item $x$: signal temporel
+\item $X$: composantes fréquentielles (paniers, bins, ...)
+\item $w$: fenêtre
+\end{description}
 \end{frame}
 
 \begin{frame}{Spectrogramme : $|X[m, t]|$}
 \begin{center}
-\includegraphics[width=.9\columnwidth]{figures/tfct} \\
+\includegraphics[width=.8\columnwidth]{figures/tfct} \\
+\end{center}
+\end{frame}
+
+\begin{frame}{Spectrogramme}
+\begin{center}
+\only<1>{\includegraphics[width=.8\columnwidth]{figures/soloTime}}
+\only<2>{\includegraphics[width=.8\columnwidth]{figures/soloSpec}}
+
+\includesound{sounds/solo.wav}
 \end{center}
 \end{frame}
 
@@ -29,9 +43,6 @@ $$ X[m, t] = \sum_{n = - \infty}^{\infty} x[n] w[n-t] \mathrm{e}^{\frac{-2 \math
 \end{frame}
 
 \begin{frame}{Compromis temps/fréquence}
-\begin{center}
-\includegraphics[width=.7\columnwidth]{figures/soloSpec} 
-\end{center}
 	$\hookrightarrow{}$ mitiger cette contrainte imposée par l'approche court-terme par l'utilisation d'\alert{\textit{a priori}} sur les sources d'intérêt.
 \end{frame}
 
@@ -60,10 +71,10 @@ x[n]=\sum_{l=1}^{L} a_{l}[n] \sin \left(\frac{2 \pi}{F_{s}} f_{l}[n] \cdot n + \
 $$
 $a_{l}[n]$ et $f_{l}[n]$ sont des signaux contrôlant respectivement l'amplitude et la phase des $L$ oscillateurs composant le modèle.
 }
-\only<2>{mettre le son et la figure} %http://webpages.mcgill.ca/staff/Group2/abregm1/web/snd/Track24.mp3
+\only<2>{ todo mettre le son et la figure} %http://webpages.mcgill.ca/staff/Group2/abregm1/web/snd/Track24.mp3
 \end{frame}
 
-\begin{frame}{Traitement}
+\begin{frame}{Procédé}
 \begin{center}
 \begin{tikzpicture}[
 nonterminal/.append style={join=by ->},
@@ -101,11 +112,11 @@ line/.style ={draw, thick, -latex',shorten
 
 \begin{frame}{Atomes temps/fréquences}
 \begin{center}
- \only<1>{\includegraphics[width=.7\textwidth]{voice_1024_512xp} \\
+ \only<1>{\includegraphics[width=.6\textwidth]{voice_1024_512xp} \\
  Taille de fenêtre : \structure{23} ms, pas d'avancement 10 ms.}
- \only<2>{\includegraphics[width=.7\textwidth]{voice_2048_512xp} \\
+ \only<2>{\includegraphics[width=.6\textwidth]{voice_2048_512xp} \\
  Taille de fenêtre : \structure{46} ms, pas d'avancement 10 ms.}
- \only<3>{\includegraphics[width=.7\textwidth]{voice_4096_512xp} \\
+ \only<3>{\includegraphics[width=.6\textwidth]{voice_4096_512xp} \\
  Taille de fenêtre : \structure{92} ms, pas d'avancement 10 ms.}
 \end{center}
 \end{frame}
@@ -119,6 +130,8 @@ line/.style ={draw, thick, -latex',shorten
       \item Sélection des continuations engendrant le moins de hautes fréquences
   \end{enumerate}
 \end{frame}
+
+%todo minipage
 
 \begin{frame}{Processus ASA \og primitifs \fg}
 \begin{description}
