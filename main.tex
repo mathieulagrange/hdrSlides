@@ -1,5 +1,5 @@
 \documentclass[compress]{beamer}
-\usepackage{euscript,amsmath,amssymb,amsfonts,amsthm,epsfig,subfigure,color,graphicx,enumitem}
+\usepackage{euscript,amsmath,amssymb,amsfonts,amsthm,epsfig,subfigure,color,graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
@@ -61,7 +61,7 @@
 \definecolor{green}{rgb}{0.8 ,.9, 0.8}
 \definecolor{blue}{rgb}{0.3, 0 ,0.6}
 
-\setitemize[0]{font=\bfseries, label=\textrm{--}}
+%\setitemize[0]{font=\bfseries, label=\textrm{--}}
 
 \newcommand{\includesound}[1]{
 \movie[]%
@@ -90,8 +90,6 @@
     \let\mkbibfootnote\mkbibfootnotetext}%
   \footfullcite}
   
-  
- 
 % title, url, authors, extensions
 \newcommand\citenote[4]{\footnote{#3 \href{#2}{\structure{#1}} #4}}
 
