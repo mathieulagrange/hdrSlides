@@ -1,62 +1,30 @@
-\begin{frame}{L'expérimentation}
-\begin{center}
-\begin{tikzpicture}[mystyle]
-\matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
-{
-\& \node (i4) {\only<3->{\alert<7>{E}}};  \& \\
-\node (i1) {\only<2->{\alert<5>{X}}}; \&
-\visible<1-3>{\node [terminal] (i2) {$p$};} \&
-\node  (i3) {\only<2->{\alert<6>{Y}}}; \\
-};
-\only<3->{\node (box) [draw, line width=1pt, rounded corners, fit =  (i1) (i4) (i3)] {};}
-\visible<1-3>{
-\begin{scope}[every path/.style=line]
-  \path (i1) -- node [left] {} (i2);
-  \path (i2) -- node [right] {} (i3);
-\end{scope}}
-\end{tikzpicture}
-\end{center}
-\vspace{.8cm}
-\begin{description}
-\item[$p$]: processus, traitement, prédicteur
-\item[$X$]: entrée, signal, observation
-\item[$Y$]: sortie, prédiction
-\item[$E$]: protocole expérimental
-\end{description}
-\end{frame}
 
-\begin{frame}{\alert{Tâche} : recherche d'information (IR)}
+
+
+
+\begin{frame}{Tâche: recherche d'information (IR)}
 \begin{center}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
 \node (i1) {X}; \&
-\node [terminal] (i2) {\only<1>{$p$}\only<2>{$P$}}; \&
-\only<2>{\node [terminal] (i3) {$C$}; \&}
-\node (i4) {\alert<1>{y}}; \\
+\node [terminal] (i2) {$p$}; \&
+\node [terminal] (i3) {$C$}; \&
+\node (i4) {\alert{y}}; \\
 };
 \begin{scope}[every path/.style=line]
   \path (i1) -- node [left] {} (i2);
- \only<1>{\path (i2) -- node [left] {} (i4);}
- \only<2>{\path (i2) -- node [above] {$L$} (i3); \path (i3) -- node [right] {} (i4);}
+  \path (i2) -- node [left] {} (i4);
 \end{scope}
 \end{tikzpicture}
 \end{center}
 \vspace{.8cm}
-\visible<2>{
 \begin{description}
 \item[$X$] en grande dimension
-\item[$L$] aussi finalement
-\begin{itemize}
-\item invariance: translation, ...
-\item stabilité: étirement, ...
-\end{itemize}
-\item[but]: $X_j=D(X_i)$, $L_j=d(L_i) \text{ ssi } y_j=y_i$
-\item[$D$]: grande déformation
-\item[$d$]: petite déformation
+\item[$y$] en petite dimension
 \end{description}
-}
 \end{frame}
+
 
 \begin{frame}{Communautés}
 \begin{block}{Music Information Retrieval (MIR)}
@@ -74,6 +42,43 @@ Acoustic Scenes and Events (DCASE)}
 \item Workshop: 50 articles
 \end{itemize}
 \end{block}
+\end{frame}
+
+\begin{frame}{Tâche: recherche d'information (IR)}
+\begin{center}
+\begin{tikzpicture}[mystyle]
+\matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
+{
+\node (i1) {X}; \&
+\node [terminal] (i2) {$P$}; \&
+\node [terminal] (i3) {$C$}; \&
+\node (i4) {\alert<1>{y}}; \\
+};
+\begin{scope}[every path/.style=line]
+  \path (i1) -- node [left] {} (i2);
+\path (i2) -- node [above] {$L$} (i3); \path (i3) -- node [right] {} (i4);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\vspace{.8cm}
+\begin{description}
+\item[$X$] en grande dimension
+\item[$L$] ..., aussi finalement
+\item[but]: $X_j=D(X_i)$, $L_j=d(L_i) \text{ ssi } y_j=y_i$
+\item[$D$]: déformation
+\end{description}
+\end{frame}
+
+\begin{frame}{Propriétés de $L$}
+  \begin{block}{Guidé par les données $X$}
+    \begin{itemize}
+    \item invariance: translation, ...
+    \item stabilité: étirement, ...
+    \end{itemize}
+  \end{block}
+  \begin{block}{Guidé par la tâche $y$}
+$$ |L_i-L_j| < |L_i-L_k| \text{ ssi } y_i=y_j \forall k | y_k \neq y_i  \neq i $$
+  \end{block}
 \end{frame}
 
 
@@ -199,15 +204,18 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
 \end{frame}
 
 \begin{frame}{Caractérisation des environnements sonores urbains (ANR CENSE)}
-\begin{center}
-\includegraphics[width=.4\columnwidth]{figures/block} \\
-\end{center}
-\begin{itemize}
-\item les qualifiants perceptifs de haut niveau comme l'agrément sont corrélés au temps de présence perçus des sources présentes dans la scène
-\item prédiction de ces valeurs perceptives par des approches neuronales
-\end{itemize}
+  \begin{minipage}{.5\columnwidth}
+    \begin{itemize}
+    \item les qualifiants perceptifs de haut niveau comme l'agrément sont corrélés au temps de présence perçus des sources présentes dans la scène
+    \item prédiction de ces valeurs perceptives par des approches neuronales
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{.4\columnwidth}
+    \begin{center}
+    \includegraphics[width=\columnwidth]{figures/block} \\
+    \end{center}
+  \end{minipage}
 \footfullcitenomarkleft{gontierActa}
-
 \end{frame}
 
 \begin{frame}{Projet de recherche avec le Conservatoire National de Musique et de Danse de Paris (CNSMDP)}
@@ -219,12 +227,13 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
 \begin{table}
 \small
     \centering
-
+{\footnotesize
 \begin{tabular}{c|ccccc}
  joint (1s) + lmnn & -lmnn & (25 ms) &  séparable & mfcc & \\
       \hline
  $96\% \pm 2$ & $93\% \pm 3$ & $91\% \pm 4$ & $91\% \pm 4$ & $82\% \pm 7$ & ($aP@5$)\\
 \end{tabular}
+}
 \end{table}
 
 \footfullcitenomarkleft{lostanlenJasmp}
@@ -261,5 +270,5 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
 \item[$Y$] plus de maîtrise : collaboration avec les communautés expertes
 \item[$E$] plus de formalisation : développement d'explanes
 \end{description}
-\footnote{\url{http://mathieulagrange.github.io/expLanes}}
+\only<1>{\footnote{\url{http://mathieulagrange.github.io/expLanes}}}
 \end{frame}

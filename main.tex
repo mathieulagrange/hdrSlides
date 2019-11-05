@@ -1,5 +1,5 @@
 \documentclass[compress]{beamer}
-\usepackage{euscript,amsmath,amssymb,amsfonts,amsthm,epsfig,subfigure,color,graphicx}
+\usepackage{euscript,amsmath,amssymb,amsfonts,amsthm,epsfig,subfigure,color,graphicx,media9}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
@@ -61,8 +61,14 @@
 \definecolor{blue}{rgb}{0.3, 0 ,0.6}
 
 \newcommand{\includesound}[1]{
-\movie[]%
-{\structure{\includegraphics[keepaspectratio,width=.5cm]{figures/play}}}{#1}}
+\includemedia[
+  addresource=#1,
+  flashvars={
+    source=#1
+   &autoPlay=true
+  }
+]{\structure{\includegraphics[keepaspectratio,width=.5cm]{figures/play}}}{APlayer.swf}
+}
 
 % footnote without numbers
 \let\oldfootnote\footnote
@@ -102,13 +108,12 @@
 
 \subtitle{\og Modélisation Long-Terme de Signaux Sonores \fg}
 
-\author{Mathieu Lagrange
-% \includesound{sounds/roxanne_thePolice.wav} \citenote{http://www.irccyn.ec-nantes.fr/\~{}lagrange}{http://www.irccyn.ec-nantes.fr/~lagrange}{}{}
-}
+\author{Mathieu Lagrange}
 
 \institute[]
 {
 \includegraphics[height=2cm]{figures/logoLs2n}\\
+\includesound{sounds/hello.mp3}
 % \includegraphics[height=1.5cm]{figures/logoEcn}
 % \includegraphics[height=1.5cm]{figures/logoCnrs}
 }
@@ -134,6 +139,17 @@ point/.style={circle,fill=black,minimum size=2pt},
 line/.style ={draw, thick, -latex',shorten
   >=2pt}]
 
+  \AtBeginSection[]{
+    \begin{frame}
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \huge \bf
+      \secname\par%
+    \end{beamercolorbox}
+    \vfill
+    \end{frame}
+  }
 
 % Update itemize to have a default overlay
 %\renewcommand{\itemize}[1][<+(1)->]{\olditemize[#1]}

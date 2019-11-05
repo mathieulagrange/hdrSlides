@@ -7,16 +7,17 @@ $$y = C(x) | \tilde{x} = C^{-1}(y), P_e(x) \simeq P_e(\tilde{x})$$
 \end{frame}
 
 \begin{frame}{Transformée de Fourier à Court Terme (TFCT)}
-$$ X[m, t] = \sum_{n = - \infty}^{\infty} x[n] w[n-t] \mathrm{e}^{\frac{-2 \mathrm{j}  \pi m n}{N}} $$
+$$ f[m, t] = \sum_{n = - \infty}^{\infty} x[n] w[n-t] \mathrm{e}^{\frac{-2 \mathrm{j}  \pi m n}{N}} $$
 
 \begin{description}
 \item[$x$]: signal temporel
-\item[$X$]: composantes fréquentielles (paniers, bins, ...)
+\item[$f$]: composantes fréquentielles (paniers, bins, ...)
 \item[$w$]: fenêtre
 \end{description}
+\footfullcitenomarkleft{lostanlen2019fourier}
 \end{frame}
 
-\begin{frame}{Spectrogramme : $|X[m, t]|$}
+\begin{frame}{Spectrogramme : $|f[m, t]|$}
 \begin{center}
 \includegraphics[width=.8\columnwidth]{figures/tfct} \\
 \end{center}
@@ -27,23 +28,23 @@ $$ X[m, t] = \sum_{n = - \infty}^{\infty} x[n] w[n-t] \mathrm{e}^{\frac{-2 \math
 \only<1>{\includegraphics[width=.8\columnwidth]{figures/soloTime}}
 \only<2>{\includegraphics[width=.8\columnwidth]{figures/soloSpec}}
 
-\includesound{sounds/solo.wav}
+\includesound{sounds/solo.mp3}
 \end{center}
 \end{frame}
-
-\begin{frame}{Typologie des évènements sonores}
-  \begin{tabular}{l|cc}
-    & \multicolumn{2}{c}{structure} \\
-  \structure{sons}  & horizontale & verticale \\
-    \hline
-    \structure{de parole} & sons voisés & sons plosifs  \\
-    & <a>, <o> &  <pe>, <qe> \\
-    \structure{d'animaux} & chants & clics  \\
-    \structure{musicaux} & chant lyrique & percussions \\
-    \structure{mécaniques} & ventilation & marteau piqueur \\
-    \structure{environnementaux} & vent & gouttes de pluie \\
-  \end{tabular}
-\end{frame}
+%
+% \begin{frame}{Typologie des évènements sonores}
+%   \begin{tabular}{l|cc}
+%     & \multicolumn{2}{c}{structure} \\
+%   \structure{sons}  & horizontale & verticale \\
+%     \hline
+%     \structure{de parole} & sons voisés & sons plosifs  \\
+%     & <a>, <o> &  <pe>, <qe> \\
+%     \structure{d'animaux} & chants & clics  \\
+%     \structure{musicaux} & chant lyrique & percussions \\
+%     \structure{mécaniques} & ventilation & marteau piqueur \\
+%     \structure{environnementaux} & vent & gouttes de pluie \\
+%   \end{tabular}
+% \end{frame}
 
 \begin{frame}{Compromis temps/fréquence}
 	$\hookrightarrow{}$ mitiger cette contrainte imposée par l'approche court-terme par l'utilisation d'\alert{\textit{a priori}} sur les sources d'intérêt.
@@ -56,7 +57,7 @@ L'ASA\footfullcitenomarkleft{bregman1994auditory} étudie l'ensemble de traiteme
 \item de les organiser en un tout cohérent.
 \item à l'aide de processus \structure{\og primitifs \fg} et \structure{\og séquentiels \fg}.
 \end{itemize}
-L'Analyse de Scènes Auditives Computationnelle (CASA)\footfullcitenomarkleft{wang2016casa} se propose de mettre en \oe~euvre ces critères pour inférer une organisation perceptuellement valide de la scène sonore.
+L'ASA Computationnelle (CASA)\footfullcitenomarkleft{wang2016casa} se propose de mettre en \oe{}uvre ces critères pour inférer une organisation perceptuellement valide de la scène sonore.
 \end{frame}
 
 \begin{frame}{Processus ASA \og primitifs \fg}
@@ -68,15 +69,26 @@ L'Analyse de Scènes Auditives Computationnelle (CASA)\footfullcitenomarkleft{wa
 \end{frame}
 
 \begin{frame}{Modèle sinusoïdal à long terme}
-\only<1>{
+\only<1,4>{
 $$
 x[n]=\sum_{l=1}^{L} a_{l}[n] \sin \left(\frac{2 \pi}{F_{s}} f_{l}[n] \cdot n + \Phi_k \right)
 $$
-$a_{l}[n]$ et $f_{l}[n]$ sont des signaux contrôlant respectivement l'amplitude et la phase des $L$ oscillateurs composant le modèle.
+}
+\only<1>{
+$a_{l}[n]$ et $f_{l}[n]$ sont des signaux \alert{basse fréquence} contrôlant respectivement l'amplitude et la phase des $L$ oscillateurs composant le modèle.
+}
+\only<4>{
+\begin{itemize}
+  \item $a_{l}[n]=1$
+  \item $f_{l}[n]=l*f_0+\sin \left(\frac{2 \pi * 5}{F_{s}} \cdot n \right)+FPB(\mathcal{N})$
+  \item $f_0$: fréquence de fondamentale
+  \item $FBP$: filtre passe bas
+\end{itemize}
+
 }
 \begin{center}
+\only<2>{\includesound{sounds/asa.mp3} \\ John Chowning (1970-80)}
 \only<3>{\includegraphics[width=1\columnwidth]{figures/asaSpec}}
-\only<2->{\includesound{sounds/asa.wav} John Chowning}
 \end{center}
 %http://webpages.mcgill.ca/staff/Group2/abregm1/web/snd/Track24.mp3
 \end{frame}
