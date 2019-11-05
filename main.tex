@@ -3,16 +3,18 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
-\setcounter{page}{1}
 \usepackage{pgf,csquotes}
 \usepackage{tikz}
-\usetikzlibrary{fit}
+\usetikzlibrary{fit,arrows,positioning}
 \newsavebox{\mysavebox}
+
+% \definecolor{blue}{rgb}{51,131,255}
+%\setlist{label=\textrm{--}}
 %\usepackage[autolinebreaks,useliterate]{mcode}
-\usetikzlibrary{arrows,positioning}
-\usepackage{letltxmacro}
-\LetLtxMacro\olditemize\itemize
-\LetLtxMacro\oldenumerate\enumerate
+
+% \usepackage{letltxmacro}
+% \LetLtxMacro\olditemize\itemize
+% \LetLtxMacro\oldenumerate\enumerate
 
 \graphicspath{{figures/}}
 
@@ -59,6 +61,8 @@
 \definecolor{green}{rgb}{0.8 ,.9, 0.8}
 \definecolor{blue}{rgb}{0.3, 0 ,0.6}
 
+\setitemize[0]{font=\bfseries, label=\textrm{--}}
+
 \newcommand{\includesound}[1]{
 \movie[]%
 {\structure{\includegraphics[keepaspectratio,width=.5cm]{figures/play}}}{#1}}
@@ -91,6 +95,10 @@
 % title, url, authors, extensions
 \newcommand\citenote[4]{\footnote{#3 \href{#2}{\structure{#1}} #4}}
 
+
+% \defbeamertemplate{description item}{align left}{\insertdescriptionitem\hfill}
+% \setbeamertemplate{description item}[align left]
+
 %\usecolortheme[named=purple]{structure}
 
 \title[]{\LARGE \bf Soutenance d'habilitation à diriger les recherches}
@@ -111,7 +119,7 @@
 \date[]{14 Novembre 2019}
 
 \logo{\includegraphics[height=.6cm]{figures/logoCnrs}}
-\setlist{label=\textrm{--}}
+
 \begin{document}
 
 \tikzstyle{mystyle}=[
