@@ -1,4 +1,4 @@
-\begin{frame}{\alert{Tâche} : \visible<3>{synthèse}}
+\begin{frame}{Tâche : \only<1>{IR} \only<2>{mlsp \footfullcitenomarkleft{lagrange2019bandwidth}} \only<3>{synthèse}}
 \begin{center}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
@@ -14,21 +14,21 @@
 \end{tikzpicture}
 
 \vspace{.8cm}
-\only<1>{IR} \only<2>{bss, inpainting, extension de bande, ...}
+\only<1>{IR} \only<2>{séparation de source, inpainting, extension de bande, ...}
 \end{center}
 \visible<3>{
 \begin{itemize}
 \item attrait personnel pour l'inouï
 \item challenge
-\item en prise avec les avancées actuelles en apprentissage
+\item en prise avec les avancées actuelles en apprentissage non supervisé
 \end{itemize}}
 \end{frame}
 
 \begin{frame}{Requis}
 \begin{description}
-  \item[fidélité]: un modèle fidèle est capable de ne pas produire d'artefacts  $\mathrm{Pe}(x) \sim \mathrm{Pe}(\tilde{x})$.
-  \item[expressivité]: un modèle expressif est capable de mettre à disposition des mécanismes de manipulation tels que la modification du modèle produise une modification cohérente de la perception du signal résultant.  $\mathrm{Pe}(\mathrm{Sy}(X')) \sim \mathrm{Pe}(x')$, où $X'$ désigne une version du modèle $X$ modifié avec des opérateurs simples, et $x'$ désigne une version modifiée du signal $x$ à partir d'opérateurs complexes: étirement, transposition, etc.
-  \item[versatilité]: les conditions de fidélité et d'expressivité sont remplies pour tout signal $x$ d'intérêt pour une tâche donnée.
+  \item[fidélité]: ne pas produire d'artefacts audibles
+  \item[expressivité]: mécanismes de manipulation simples produisant une modification cohérente de la perception du signal résultant
+  \item[versatilité]: les conditions de fidélité et d'expressivité sont remplies pour tout signal d'intérêt pour une tâche donnée
 \end{description}
 \end{frame}
 
@@ -76,17 +76,13 @@
   \vspace{.5cm}
 \end{frame}
 
-prototype fonctionnel
-
-apprentissage non supervisé
-
 \begin{frame}{Vision}
 \begin{center}
  \includegraphics[width=.6\columnwidth]{longTerme}
 \end{center}
 \begin{description}
 \item[comprendre] : mesure et qualification de l'environnement sonore et de sa perception
-\item[innover] : 
+\item[innover] :
 \begin{itemize}
 \item Andy Hildebrand (Autotune)
 \item Xavier Serra (Vocaloïd)
@@ -140,7 +136,7 @@ apprentissage non supervisé
 \end{block}
 \begin{block}{Côte est}
 \begin{itemize}
-\item Juan Pablo Bello, music and audio research group, NYU (NY) 
+\item Juan Pablo Bello, music and audio research group, NYU (NY)
 \item Mounya Elhilali, Laboratory for Computational Audio Perception, Johns Hopkins University (Baltimore)
 \item Joakim Andèn, Flatiron Institute (NY)
 \end{itemize}

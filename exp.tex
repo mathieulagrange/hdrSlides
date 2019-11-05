@@ -25,14 +25,14 @@
 \end{description}
 \end{frame}
 
-\begin{frame}{\alert{Tâche} : recherche d'information}
+\begin{frame}{\alert{Tâche} : recherche d'information (IR)}
 \begin{center}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
 \node (i1) {X}; \&
 \node [terminal] (i2) {\only<1>{$p$}\only<2>{$P$}}; \&
-\only<2>{\node [terminal] (i3) {$C$}; \&} 
+\only<2>{\node [terminal] (i3) {$C$}; \&}
 \node (i4) {\alert<1>{y}}; \\
 };
 \begin{scope}[every path/.style=line]
@@ -43,16 +43,19 @@
 \end{tikzpicture}
 \end{center}
 \vspace{.8cm}
+\visible<2>{
 \begin{description}
 \item[$X$] en grande dimension
 \item[$L$] aussi finalement
-\item[but]: $X_j=D(X_i)$, $L_j=d(L_i) \text{ ssi } y_j=y_i$
-\item[propriétés désirées] de $P$: 
 \begin{itemize}
 \item invariance: translation, ...
 \item stabilité: étirement, ...
 \end{itemize}
+\item[but]: $X_j=D(X_i)$, $L_j=d(L_i) \text{ ssi } y_j=y_i$
+\item[$D$]: grande déformation
+\item[$d$]: petite déformation
 \end{description}
+}
 \end{frame}
 
 \begin{frame}{Communautés}
@@ -81,12 +84,12 @@ Acoustic Scenes and Events (DCASE)}
 {
 \node (i1) {X}; \&
 \node [terminal] (i2) {$P$}; \&
-\node [terminal] (i3) {$C$}; \& 
+\node [terminal] (i3) {$C$}; \&
 \node (i4) {y}; \\
 };
 \begin{scope}[every path/.style=line]
   \path (i1) -- node [left] {} (i2);
-  \path (i2) -- node [above] {  } (i3); 
+  \path (i2) -- node [above] {  } (i3);
   \path (i3) -- node [right] {} (i4);
 \end{scope}
 \end{tikzpicture}
@@ -98,7 +101,7 @@ Acoustic Scenes and Events (DCASE)}
     \item plusieurs TFCT à résolutions différentes
     \item réseaux convolutionnels profonds
 \end{itemize}
-\item[$C$]: module de \og perception \fg
+\item[$C$]: module de \og cognition \fg
 \begin{itemize}
     \item réseaux neuronaux profonds totalement connectés
     \item fusion
@@ -128,7 +131,7 @@ Acoustic Scenes and Events (DCASE)}
 \visible<4>{
 \begin{itemize}
 \item Alternative à l'approche \og mon outil, mon jeu de données, ma métrique \fg
-\item Spécification de l'expérimentation  \og clés en main \fg 
+\item Spécification de l'expérimentation  \og clés en main \fg
 \item biais de conception du protocole assumés collectivement
 \end{itemize}
 }
@@ -152,7 +155,7 @@ Acoustic Scenes and Events (DCASE)}
 \end{itemize}
 \vspace{.8cm}
 \begin{center}
-\og Faites quelque chose d'intéressant !! \fg \\ 
+\og Faites quelque chose d'intéressant !! \fg \\
 \og ... de scientifique !! \fg
 \end{center}
 \vspace{.8cm}
@@ -215,8 +218,8 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
 \end{itemize}
 \begin{table}
 \small
-    \centering 
-    
+    \centering
+
 \begin{tabular}{c|ccccc}
  joint (1s) + lmnn & -lmnn & (25 ms) &  séparable & mfcc & \\
       \hline
@@ -258,4 +261,5 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
 \item[$Y$] plus de maîtrise : collaboration avec les communautés expertes
 \item[$E$] plus de formalisation : développement d'explanes
 \end{description}
+\footnote{\url{http://mathieulagrange.github.io/expLanes}}
 \end{frame}

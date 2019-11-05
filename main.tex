@@ -9,7 +9,7 @@
 \newsavebox{\mysavebox}
 
 % \definecolor{blue}{rgb}{51,131,255}
-%\setlist{label=\textrm{--}}
+%
 %\usepackage[autolinebreaks,useliterate]{mcode}
 
 % \usepackage{letltxmacro}
@@ -54,30 +54,27 @@
 \setbeamertemplate{enumerate items}[circle]
 \setbeamertemplate{section in toc}[circle]
 %\useoutertheme{infolines}
-\definecolor{myColor}{HTML}{E9CFEC}
 \setbeamercolor{block title}{bg=green}
 
 \definecolor{violet}{rgb}{0.8, 0.6, 0.8}
 \definecolor{green}{rgb}{0.8 ,.9, 0.8}
 \definecolor{blue}{rgb}{0.3, 0 ,0.6}
 
-%\setitemize[0]{font=\bfseries, label=\textrm{--}}
-
 \newcommand{\includesound}[1]{
 \movie[]%
 {\structure{\includegraphics[keepaspectratio,width=.5cm]{figures/play}}}{#1}}
 
 % footnote without numbers
-% \let\oldfootnote\footnote
-% \renewcommand\footnote[1]{\let\thefootnote\relax%
-% \oldfootnote{#1}}
+\let\oldfootnote\footnote
+\renewcommand\footnote[1]{\let\thefootnote\relax%
+\oldfootnote{#1}}
 
 \newrobustcmd*{\footfullcitenomark}{%
   \AtNextCite{%
     \let\thefootnote\relax
     \let\mkbibfootnote\mkbibfootnotetext}%
   \footfullcite}
-  
+
   \defbeamertemplate*{footnotetext}{default}{%
   %\parindent 1em\noindent%
   \raggedright
@@ -89,10 +86,12 @@
     \setbeamertemplate{footnote}{\usebeamertemplate{footnotetext}}%
     \let\mkbibfootnote\mkbibfootnotetext}%
   \footfullcite}
-  
+
 % title, url, authors, extensions
 \newcommand\citenote[4]{\footnote{#3 \href{#2}{\structure{#1}} #4}}
 
+
+\setbeamertemplate{itemize item}{\textrm{--}}
 
 % \defbeamertemplate{description item}{align left}{\insertdescriptionitem\hfill}
 % \setbeamertemplate{description item}[align left]
@@ -152,8 +151,5 @@ line/.style ={draw, thick, -latex',shorten
 \section[CASA]{Analyse computationnelle de scènes auditives (CASA)} \input{casa.tex}
 \section[Expérimentation]{Expérimentation en traitement du signal audio-numérique} \input{exp.tex}
 \section[Projet]{Projet de recherche} \input{proj.tex}
- 
+
 \end{document}
-
-
-

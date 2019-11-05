@@ -1,19 +1,18 @@
 \begin{frame}{\alert{Tâche} : Codage par transformée}
-$$y = C(x) \in \mathbb{R}^Y | x \in \mathbb{R}^{X} \tilde{x} = C^{-1}(y), P_e(x) \simeq P_e(\tilde{x})$$
+$$y = C(x) | \tilde{x} = C^{-1}(y), P_e(x) \simeq P_e(\tilde{x})$$
 \begin{itemize}
 \item $C$ : Quantification adaptative d'un équivalent de la Transformée de Fourier à Court Terme (TFCT)
 \item $P_e$ : Modélisation de la sensibilité aux déformations de la membrane basilaire\footfullcitenomarkleft{zwicker2013psychoacoustics}
 \end{itemize}
-Gain : $Y<<X$
-Validation : écoute
 \end{frame}
 
 \begin{frame}{Transformée de Fourier à Court Terme (TFCT)}
 $$ X[m, t] = \sum_{n = - \infty}^{\infty} x[n] w[n-t] \mathrm{e}^{\frac{-2 \mathrm{j}  \pi m n}{N}} $$
+
 \begin{description}
-\item $x$: signal temporel
-\item $X$: composantes fréquentielles (paniers, bins, ...)
-\item $w$: fenêtre
+\item[$x$]: signal temporel
+\item[$X$]: composantes fréquentielles (paniers, bins, ...)
+\item[$w$]: fenêtre
 \end{description}
 \end{frame}
 
@@ -33,13 +32,17 @@ $$ X[m, t] = \sum_{n = - \infty}^{\infty} x[n] w[n-t] \mathrm{e}^{\frac{-2 \math
 \end{frame}
 
 \begin{frame}{Typologie des évènements sonores}
-\begin{description}
-  \item[parole] : sons voisés <a>, <o> / sons plosifs <pe>, <qe>;
-  \item[communication animale] : hululement de chouettes / clics de localisation de chauve souris;
-  \item[musique] : chant lyrique / percussions;
-  \item[mécanique] : ventilation / marteau piqueur;
-  \item[environnementaux] : vent faisant siffler des câbles / gouttes de pluie tombant sporadiquement.
-\end{description}
+  \begin{tabular}{l|cc}
+    & \multicolumn{2}{c}{structure} \\
+  \structure{sons}  & horizontale & verticale \\
+    \hline
+    \structure{de parole} & sons voisés & sons plosifs  \\
+    & <a>, <o> &  <pe>, <qe> \\
+    \structure{d'animaux} & chants & clics  \\
+    \structure{musicaux} & chant lyrique & percussions \\
+    \structure{mécaniques} & ventilation & marteau piqueur \\
+    \structure{environnementaux} & vent & gouttes de pluie \\
+  \end{tabular}
 \end{frame}
 
 \begin{frame}{Compromis temps/fréquence}
@@ -72,7 +75,7 @@ $$
 $a_{l}[n]$ et $f_{l}[n]$ sont des signaux contrôlant respectivement l'amplitude et la phase des $L$ oscillateurs composant le modèle.
 }
 \begin{center}
-\only<3>{\includegraphics[width=\columnwidth]{figures/asaSpec}}
+\only<3>{\includegraphics[width=1\columnwidth]{figures/asaSpec}}
 \only<2->{\includesound{sounds/asa.wav} John Chowning}
 \end{center}
 %http://webpages.mcgill.ca/staff/Group2/abregm1/web/snd/Track24.mp3
@@ -81,7 +84,7 @@ $a_{l}[n]$ et $f_{l}[n]$ sont des signaux contrôlant respectivement l'amplitude
 \begin{frame}{Procédé d'analyse de signaux sonores}
 \begin{center}
 \begin{tikzpicture}[mystyle]
-  
+
   \matrix [column sep=10mm,row sep=5mm]
 {
 \node (i1) {}; \\
@@ -131,7 +134,7 @@ $a_{l}[n]$ et $f_{l}[n]$ sont des signaux contrôlant respectivement l'amplitude
 \item[...]
 \end{description}
 \end{frame}
- 
+
 \begin{frame}{Algorithme par coupures normalisées de graphes}
 \begin{center}
  \only<1>{\includegraphics[width=.7\textwidth]{orcaSin}}
@@ -145,7 +148,7 @@ $a_{l}[n]$ et $f_{l}[n]$ sont des signaux contrôlant respectivement l'amplitude
 \begin{frame}{Processus ASA \og séquentiels \fg}
 \begin{description}
 \item[proximité] : des éléments proches les uns des autres sur le plan temps/fréquence ont tendance à être groupés ensemble
-\item[similarité] : des éléments qui se ressemblent ont tendance à être groupés ensemble (timbre). 
+\item[similarité] : des éléments qui se ressemblent ont tendance à être groupés ensemble (timbre).
 \item[...]
 \end{description}
 \end{frame}
@@ -154,11 +157,11 @@ $a_{l}[n]$ et $f_{l}[n]$ sont des signaux contrôlant respectivement l'amplitude
 \footfullcitenomarkleft{rossignol2018efficient}
 \footfullcitenomarkleft{rossignolhal-01122006}
 \begin{center}
-   \includegraphics[width=.9\textwidth]{alc_sample}  
+   \includegraphics[width=.9\textwidth]{alc_sample}
 \end{center}
 \end{frame}
 
-\begin{frame}{Approches Casa \fg algorithmiques \og}
+\begin{frame}{Approches \og algorithmiques \fg}
 \begin{itemize}
 \item Expression d'\textit{a priori} sous forme d'heuristiques computationnelles
 \item Algorithmes de structuration non supervisés
@@ -166,9 +169,9 @@ $a_{l}[n]$ et $f_{l}[n]$ sont des signaux contrôlant respectivement l'amplitude
 \begin{block}{Bilan}
 \begin{itemize}
 \item[\textbf{+}] approches long terme : exploitation d'intervalles d'observation long
-\item[\alert{\textbf{-}}] représentation court terme : multi-résolution
+\item[\alert{\textbf{-}}] représentation court terme : problèmes de résolution
 \item[\textbf{+}] pas d'apprentissage : protocole expérimental simple, interprétabilité
-\item[\alert{\textbf{-}}] pas d'apprentissage : tractabilité, efficience
+\item[\alert{\textbf{-}}] pas d'apprentissage : problèmes de tractabilité, problèmes d'efficience
 \end{itemize}
 \end{block}
 \end{frame}
