@@ -1,27 +1,39 @@
-\begin{frame}{Tâche : \only<1>{IR} \only<2>{mlsp \footfullcitenomarkleft{lagrange2019bandwidth}} \only<3>{synthèse}}
+% \begin{frame}{Tâche : \only<1>{IR} \only<2>{mlsp \footfullcitenomarkleft{lagrange2019bandwidth}} \only<3>{synthèse}}
+% \begin{center}
+% \begin{tikzpicture}[mystyle]
+% \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
+% {
+% \node (i1) {\only<1-2>{X}\only<3>{\alert{x}}}; \&
+% \node [terminal] (i2) {p}; \&
+% \node  (i3) {\alert{\only<1>{y}\only<2>{Y}\only<3>{Y}}}; \\
+% };
+% \begin{scope}[every path/.style=line]
+%   \path (i1) -- node [left] {} (i2);
+%   \path (i2) -- node [right] {} (i3);
+% \end{scope}
+% \end{tikzpicture}
+
+\begin{frame}{Tâche : synthèse}
 \begin{center}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
-\node (i1) {\only<1-2>{X}\only<3>{\alert{x}}}; \&
+\node (i1) {\alert{x}}; \&
 \node [terminal] (i2) {p}; \&
-\node  (i3) {\alert{\only<1>{y}\only<2>{Y}\only<3>{Y}}}; \\
+\node  (i3) {\alert{Y}}; \\
 };
 \begin{scope}[every path/.style=line]
   \path (i1) -- node [left] {} (i2);
   \path (i2) -- node [right] {} (i3);
 \end{scope}
 \end{tikzpicture}
-
-\vspace{.8cm}
-\only<1>{IR} \only<2>{séparation de source, inpainting, extension de bande, ...}
 \end{center}
-\visible<3>{
+\vspace{.8cm}
 \begin{itemize}
 \item attrait personnel pour l'inouï
 \item challenge
 \item en prise avec les avancées actuelles en apprentissage non supervisé
-\end{itemize}}
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Requis}
