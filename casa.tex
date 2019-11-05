@@ -71,25 +71,16 @@ x[n]=\sum_{l=1}^{L} a_{l}[n] \sin \left(\frac{2 \pi}{F_{s}} f_{l}[n] \cdot n + \
 $$
 $a_{l}[n]$ et $f_{l}[n]$ sont des signaux contrôlant respectivement l'amplitude et la phase des $L$ oscillateurs composant le modèle.
 }
-\only<2>{ todo mettre le son et la figure} %http://webpages.mcgill.ca/staff/Group2/abregm1/web/snd/Track24.mp3
+\begin{center}
+\only<3>{\includegraphics[width=\columnwidth]{figures/asaSpec}}
+\only<2->{\includesound{sounds/asa.wav} John Chowning}
+\end{center}
+%http://webpages.mcgill.ca/staff/Group2/abregm1/web/snd/Track24.mp3
 \end{frame}
 
-\begin{frame}{Procédé}
+\begin{frame}{Procédé d'analyse de signaux sonores}
 \begin{center}
-\begin{tikzpicture}[
-nonterminal/.append style={join=by ->},
-tip/.style={->,shorten >=1pt},every join/.style={rounded corners},
-terminal/.style={
-% The shape:
-rectangle,minimum size=6mm,rounded corners=1mm,
-% The rest
-very thick,draw=black!50,
-top color=white,bottom color=black!10,
-font=\ttfamily},
-point/.style={circle,fill=black,minimum size=2pt},
-%every node/.style=draw,
-line/.style ={draw, thick, -latex',shorten
-  >=2pt}]
+\begin{tikzpicture}[mystyle]
   
   \matrix [column sep=10mm,row sep=5mm]
 {
@@ -123,7 +114,7 @@ line/.style ={draw, thick, -latex',shorten
 
 \begin{frame}{Algorithme de suivi amélioré\footfullcitenomarkleft{lagrangeTaslp06}}
 \begin{center}
-  \includegraphics[width=.4\textwidth]{trackingxp2xp2}
+  \includegraphics[width=.35\textwidth]{trackingxp2xp2}
 \end{center}
   \begin{enumerate}
       \item Prédiction auto-régressive de l'évolution des paramètres de fréquence et d'amplitude

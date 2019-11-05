@@ -27,14 +27,32 @@
 
 \begin{frame}{\alert{Tâche} : recherche d'information}
 \begin{center}
-\includegraphics[width=.3\columnwidth]{figures/play}
+\begin{tikzpicture}[mystyle]
+\matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
+{
+\node (i1) {X}; \&
+\node [terminal] (i2) {\only<1>{$p$}\only<2>{$P$}}; \&
+\only<2>{\node [terminal] (i3) {$C$}; \&} 
+\node (i4) {\alert<1>{y}}; \\
+};
+\begin{scope}[every path/.style=line]
+  \path (i1) -- node [left] {} (i2);
+ \only<1>{\path (i2) -- node [left] {} (i4);}
+ \only<2>{\path (i2) -- node [above] {$L$} (i3); \path (i3) -- node [right] {} (i4);}
+\end{scope}
+\end{tikzpicture}
 \end{center}
+\vspace{.8cm}
+\begin{description}
+\item[$X$] en grande dimension
+\item[$L$] aussi finalement
+\item[but]: $X_j=D(X_i)$, $L_j=d(L_i) \text{ ssi } y_j=y_i$
+\item[propriétés désirées] de $P$: 
 \begin{itemize}
-\item $X$ en grande dimension
-\item $L$ aussi finalement
-\item but : $X_j=D(X_i)$, $L_j=d(L_i) \text{ ssi } y_j=y_i$
-\item propriétés désirées: invariance, stabilité aux déformations signal
+\item invariance: translation, ...
+\item stabilité: étirement, ...
 \end{itemize}
+\end{description}
 \end{frame}
 
 \begin{frame}{Communautés}
@@ -58,11 +76,33 @@ Acoustic Scenes and Events (DCASE)}
 
 \begin{frame}{IR en audio}
 \begin{center}
-\includegraphics[width=.3\columnwidth]{figures/play}
+\begin{tikzpicture}[mystyle]
+\matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
+{
+\node (i1) {X}; \&
+\node [terminal] (i2) {$P$}; \&
+\node [terminal] (i3) {$C$}; \& 
+\node (i4) {y}; \\
+};
+\begin{scope}[every path/.style=line]
+  \path (i1) -- node [left] {} (i2);
+  \path (i2) -- node [above] {  } (i3); 
+  \path (i3) -- node [right] {} (i4);
+\end{scope}
+\end{tikzpicture}
 \end{center}
+\vspace{.8cm}
 \begin{description}
-\item[$R$] TFCT à plusieurs résolutions, réseaux convolutionnels profonds
-\item[$C$] ensembles de réseaux neuronaux profonds 
+\item[$P$]: module de \og perception \fg
+\begin{itemize}
+    \item plusieurs TFCT à résolutions différentes
+    \item réseaux convolutionnels profonds
+\end{itemize}
+\item[$C$]: module de \og perception \fg
+\begin{itemize}
+    \item réseaux neuronaux profonds totalement connectés
+    \item fusion
+\end{itemize}
 \end{description}
 \end{frame}
 
@@ -187,25 +227,13 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
 \footfullcitenomarkleft{lostanlenJasmp}
 \end{frame}
 
-
-E
-
-reproducibilité
-
-donoho
-
-protocoles expérimentaux assez canonique
-
-explanes
-
-extension de bande
-
-demonstration
-
-
-
-
-
+% E
+% reproducibilité
+% donoho
+% protocoles expérimentaux assez canonique
+% explanes
+% extension de bande
+% demonstration
 
 \begin{frame}{Approches étudiées}
 \begin{center}
