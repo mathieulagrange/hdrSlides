@@ -1,30 +1,34 @@
-
-
-\begin{frame}{\'Expérimentation}
+\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
 \begin{center}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
-\& \node (i4) {\only<3->{{E}}};  \& \\
-\node (i1) {\only<2->{{X}}}; \&
-\visible<1-3>{\node [terminal] (i2) {$p$};} \&
-\node  (i3) {\only<2->{{Y}}}; \\
+\& \node (i4) {E};  \& \\
+\node (i1) {X}; \&
+\node [terminal] (i2) {$p$}; \&
+\node  (i3) {Y}; \\
 };
-\only<3->{\node (box) [draw, line width=1pt, rounded corners, fit =  (i1) (i4) (i3)] {};}
-\visible<1-3>{
+\node (box) [draw, line width=1pt, rounded corners, fit =  (i1) (i4) (i3)] {};
 \begin{scope}[every path/.style=line]
   \path (i1) -- node [left] {} (i2);
   \path (i2) -- node [right] {} (i3);
-\end{scope}}
+\end{scope}
 \end{tikzpicture}
 \end{center}
 \vspace{.8cm}
+\only<1>{
 \begin{description}
 \item[$p$]: processus, traitement, prédicteur
 \item[$X$]: entrée, signal, observation
 \item[$Y$]: sortie, prédiction
 \item[$E$]: protocole expérimental
-\end{description}
+\end{description}}
+\only<2>{
+\begin{description}
+  \item[$X$]: plus de contrôle
+  \item[$Y$]: plus de maîtrise
+  \item[$E$]: plus de formalisation
+\end{description}}
 \end{frame}
 
 
@@ -204,22 +208,21 @@ $$ |L_i-L_j| < |L_i-L_k| \text{ ssi } y_i=y_j \forall k | y_k \neq y_i $$
 \vspace{.8cm}
 \begin{center}
 \og Faites quelque chose d'intéressant !! \fg \\
-\og ... de scientifique !! \fg
+\og ... de scientifique !! \fg \\
+\hfill \textit{panel DCASE 2018}
 \end{center}
 \vspace{.8cm}
 $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la démonstration d'un outil
 \end{frame}
 
-\begin{frame}{Design de Challenge}
-\begin{block}{Approche  \og psychologie expérimentale \fg}
+\begin{frame}{Approche  \og psychologie expérimentale \fg}
 \begin{itemize}
 \item formulation d'une hypothèse : le degré de polyphonie impacte les algorithmes de détection d'évènement sonores
 \item production de corpus avec un degré variable de polyphonie
 \item choix d'un protocole expérimental adapté
 \item les algorithmes sont considérés comme des sujets et leurs concepteurs ne sont pas informés de la typologie du corpus
 \item analyse des résultats
-\end{itemize}
-\end{block} \footfullcitenomarkleft{lafayhal-01111381}
+\end{itemize} \footfullcitenomarkleft{lafayhal-01111381}
 \end{frame}
 
 \begin{frame}{Que prédire ?}
@@ -281,6 +284,44 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
 \footfullcitenomarkleft{lostanlenJasmp}
 \end{frame}
 
+\begin{frame}{ExpLanes}
+  \begin{center}
+    \only<1>{
+  \begin{tikzpicture}[mystyle]
+  \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
+  {
+  \& \node (i4) {\alert{E}};  \& \\
+  \node (i1) {X}; \&
+  \node [terminal] (i2) {p}; \&
+  \node  (i3) {y}; \\
+  };
+  \node (box) [draw, line width=1pt, rounded corners, fit =  (i1) (i4) (i3)] {};
+  \begin{scope}[every path/.style=line]
+    \path (i1) -- node [left] {} (i2);
+    \path (i2) -- node [right] {} (i3);
+  \end{scope}
+\end{tikzpicture}}
+\only<2>{  \includegraphics[width=.3\columnwidth]{figures/logoExplanes} \\
+   \url{http://mathieulagrange.github.io/expLanes}}
+  \end{center}
+  \vspace{.8cm}
+ExpLanes, un environnement logiciel qui facilite:
+\begin{enumerate}
+  \item la gestion des calculs
+  \item le traitement des résultats
+  \item la reproducibilité
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{ExpLanes}
+
+  \begin{center}
+  \includegraphics[width=\columnwidth]{figures/factors} \\
+  \tiny  \url{https://mathieulagrange.github.io/paperBandwidthExtensionCnn/demo}
+  \end{center}
+\footfullcitenomarkleft{lagrange2019bandwidth}
+\end{frame}
+
 % E
 % reproducibilité
 % donoho
@@ -311,5 +352,4 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
 \item[$y$] plus de maîtrise : collaboration avec les communautés expertes
 \item[$E$] plus de formalisation : développement d'explanes
 \end{description}
-\footnote{\url{http://mathieulagrange.github.io/expLanes}}
 \end{frame}
