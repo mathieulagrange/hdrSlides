@@ -21,6 +21,7 @@
 \usepackage[doi=false,
             isbn=false,
             url=false,
+            firstinits=true,
             bibstyle=authoryear,
             backend=biber,
             style=authoryear]{biblatex} %, backend=bibtex
@@ -28,6 +29,8 @@
     \scriptsize
     \clearfield{note}
     \clearfield{pages}
+    \clearfield{volume}%
+    \clearfield{number}
     \clearlist{location}
     \clearlist{publisher}
     \clearname{editor}}

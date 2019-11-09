@@ -6,7 +6,7 @@
 {
 \node (i1) {\only<1-2>{X}\only<3-4>{\alert{x}}}; \&
 \node [terminal] (i2) {p}; \&
-\node  (i3) {\only<1>{y}\only<2>{Y}\only<3-4>{\alert{Y}}}; \\
+\node  (i3) {\only<2>{y}\only<1>{Y}\only<3-4>{\alert{Y}}}; \\
 };
 \begin{scope}[every path/.style=line]
   \path (i1) -- node [left] {} (i2);
