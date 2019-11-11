@@ -169,7 +169,7 @@ Acoustic Scenes and Events (DCASE)}
 {
 \& \node (i4) {E};  \& \\
 \node (i1) {\alert<6>{X}}; \&
-\visible<2->{\node [terminal] (i2) {\only<2>{$p_1$}\only<3>{$p_2$}\only<4>{$p_n$}\only<5>{$p$}}; \&
+\visible<2->{\node [terminal] (i2) {\only<2>{$p_1$}\only<3>{$p_2$}\only<4>{$p_n$}\only<5->{$p$}}; \&
 \node  (i3) {y};} \\
 };
 \node (box) [draw, line width=1pt, rounded corners, fit =  (i1) (i4) (i3)] {};
@@ -306,7 +306,7 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
    \url{http://mathieulagrange.github.io/expLanes}}
   \end{center}
   \vspace{.8cm}
-  \uncover{2}{
+  \uncover<2>{
 ExpLanes, un environnement logiciel qui facilite:
 \begin{enumerate}
   \item la gestion des calculs
