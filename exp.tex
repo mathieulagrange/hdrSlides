@@ -54,25 +54,6 @@
 \end{description}
 \end{frame}
 
-
-\begin{frame}{Communautés}
-\begin{block}{Music Information Retrieval (MIR)}
-\begin{itemize}
-\item 2000 - --
-\item Challenge: 18 tâches  (Mirex)
-\item Conference : 100 articles (Ismir)
-\end{itemize}
-\end{block}
-\begin{block}{Detection and Classification of
-Acoustic Scenes and Events (DCASE)}
-\begin{itemize}
-\item 2013 - --
-\item Challenge: 7 tâches
-\item Workshop: 50 articles
-\end{itemize}
-\end{block}
-\end{frame}
-
 \begin{frame}{Tâche: recherche d'information (IR)}
 \begin{center}
 \begin{tikzpicture}[mystyle]
@@ -161,13 +142,33 @@ $$ |L_i-L_j| < |L_i-L_k| \text{ ssi } y_i=y_j \forall k | y_k \neq y_i $$
 \end{frame}
 
 
+\begin{frame}{Communautés}
+\begin{block}{Music Information Retrieval (MIR)}
+\begin{itemize}
+\item 2000 - --
+\item Challenge: 18 tâches  (Mirex)
+\item Conference : 100 articles (Ismir)
+\end{itemize}
+\end{block}
+\begin{block}{Detection and Classification of
+Acoustic Scenes and Events (DCASE)}
+\begin{itemize}
+\item 2013 - --
+\item Challenge: 7 tâches
+\item Workshop: 50 articles
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
 \begin{frame}{Challenges en IR}
 \begin{center}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
 \& \node (i4) {E};  \& \\
-\node (i1) {\alert<5>{X}}; \&
+\node (i1) {\alert<6>{X}}; \&
 \visible<2->{\node [terminal] (i2) {\only<2>{$p_1$}\only<3>{$p_2$}\only<4>{$p_n$}\only<5>{$p$}}; \&
 \node  (i3) {y};} \\
 };
@@ -189,17 +190,6 @@ $$ |L_i-L_j| < |L_i-L_k| \text{ ssi } y_i=y_j \forall k | y_k \neq y_i $$
 }
 \end{frame}
 
-\begin{frame}{Design de Challenge}
-\begin{block}{Organisation d'une tâche DCASE (2013, 2016)}
-\begin{itemize}
-\item Tâche de détection d'évènements
-\item corpus de scènes sonores simulées
-\item sons isolés enregistrés
-\item contrôle de haut niveau sur la composition de la scène
-\end{itemize}
-\end{block}\footfullcitenomarkleft{stowellhal-01253912} \footfullcitenomarkleft{mesa}
-\end{frame}
-
 \begin{frame}{Challenges en crise ?}
 \begin{itemize}
     \item cauchemard des métriques
@@ -213,6 +203,17 @@ $$ |L_i-L_j| < |L_i-L_k| \text{ ssi } y_i=y_j \forall k | y_k \neq y_i $$
 \end{center}
 \vspace{.8cm}
 $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la démonstration d'un outil
+\end{frame}
+
+\begin{frame}{Design de Challenge}
+\begin{block}{Organisation d'une tâche DCASE (2013, 2016)}
+\begin{itemize}
+\item Tâche de détection d'évènements
+\item corpus de scènes sonores simulées
+\item sons isolés enregistrés
+\item contrôle de haut niveau sur la composition de la scène
+\end{itemize}
+\end{block}\footfullcitenomarkleft{stowellhal-01253912} \footfullcitenomarkleft{mesa}
 \end{frame}
 
 \begin{frame}{Approche  \og psychologie expérimentale \fg}
@@ -305,12 +306,14 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
    \url{http://mathieulagrange.github.io/expLanes}}
   \end{center}
   \vspace{.8cm}
+  \uncover{2}{
 ExpLanes, un environnement logiciel qui facilite:
 \begin{enumerate}
   \item la gestion des calculs
   \item le traitement des résultats
   \item la reproducibilité
 \end{enumerate}
+}
 \end{frame}
 
 \begin{frame}{ExpLanes}

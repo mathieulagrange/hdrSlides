@@ -17,7 +17,7 @@ L'ASA Computationnelle (CASA)\footfullcitenomarkleft{wang2016casa} se propose de
 \end{frame}
 
 \begin{frame}{Modèle sinusoïdal à long terme}
-\only<1,4>{
+\only<1,2>{
 $$
 x[n]=\sum_{l=1}^{L} a_{l}[n] \sin \left(\frac{2 \pi}{F_{s}} f_{l}[n] \cdot n + \Phi_k \right)
 $$
@@ -25,7 +25,7 @@ $$
 \only<1>{
 $a_{l}[n]$ et $f_{l}[n]$ sont des signaux \alert{basse fréquence} contrôlant respectivement l'amplitude et la phase des $L$ oscillateurs composant le modèle.
 }
-\only<4>{
+\only<2>{
 \begin{itemize}
   \item $a_{l}[n]=1$
   \item $f_{l}[n]=l*\left(f_0+a_v \sin \left(\frac{2 \pi * 5}{F_{s}} \cdot n \right)+FPB(\mathcal{N}) \right)$
@@ -35,8 +35,9 @@ $a_{l}[n]$ et $f_{l}[n]$ sont des signaux \alert{basse fréquence} contrôlant r
 
 }
 \begin{center}
-\only<2>{\includesound{sounds/asa.mp3} \\ John Chowning (1970-80)}
-\only<3>{\includegraphics[width=1\columnwidth]{figures/asaSpec}}
+\only<3>{\includegraphics[width=1\columnwidth]{figures/asaSpec} \\
+ John Chowning (1970-80) \\
+ \includesound{sounds/asa.mp3}}
 \end{center}
 %http://webpages.mcgill.ca/staff/Group2/abregm1/web/snd/Track24.mp3
 \end{frame}
