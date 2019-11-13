@@ -172,18 +172,18 @@
 \end{block}
 \end{frame}
 
-\begin{frame}{\only<1,9>{Un travail en inter-disciplinarité} \only<2>{France Télécom R\&D (2001-04)}\only<3>{Bx (2004-06)}\only<4>{Uvic (2006-07)}\only<5>{McGill (2007-08)}\only<6>{Télécom (2008-09)}\only<7>{Ircam (2009-13)}\only<8>{Ls2n (2013-19)}}
+\begin{frame}{\only<1>{Carte thématique}\only<9>{Un travail en inter-disciplinarité} \only<2>{France Télécom R\&D (2001-04)}\only<3>{Bx (2004-06)}\only<4>{Uvic (2006-07)}\only<5>{McGill (2007-08)}\only<6>{Télécom (2008-09)}\only<7>{Ircam (2009-13)}\only<8>{Ls2n (2013-19)}}
   \begin{tikzpicture}[mystyle]
       \matrix [column sep=20mm,row sep=20mm,ampersand replacement=\&]
       {
-      \node (imu) {Musicologie}; \&
-      \node  (ipe) {Perception}; \&
-      \node  (id) {Design}; \\
-      \node [align=center](ima) {Maths\\ Appli}; \&
+      \node (imu) {\structure{Musicologie}}; \&
+      \node  (ipe) {\structure{Perception}}; \&
+      \node  (id) {\structure{Design}}; \\
+      \node [align=center](ima) {\structure{Maths} \\ \structure{Appli}}; \&
       \node [terminal,align=center] (its) {Traitement \\du signal\\ audio}; \&
-      \node  (iph) {Physique}; \\
+      \node  (iph) {\structure{Physique}}; \\
       \node  {}; \&
-      \node  (ii) {Informatique}; \&
+      \node  (ii) {\structure{Informatique}}; \&
       \node   {}; \\
       };
       \begin{scope}[every path/.style=line, font=\scriptsize]
