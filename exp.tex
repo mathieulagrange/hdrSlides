@@ -3,10 +3,10 @@ Compétition\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
-\& \node (i4) {E};  \& \\
-\node (i1) {X}; \&
+\& \node (i4) {Exp};  \& \\
+\node (i1) {$X$}; \&
 \node [terminal] (i2) {$p$}; \&
-\node  (i3) {Y}; \\
+\node  (i3) {$Y$}; \\
 };
 \node (box) [draw, line width=1pt, rounded corners, fit =  (i1) (i4) (i3)] {};
 \begin{scope}[every path/.style=line]
@@ -21,13 +21,13 @@ Compétition\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
 \item[$p$]: processus, traitement, prédicteur
 \item[$X$]: entrée, signal, observation
 \item[$Y$]: sortie, prédiction
-\item[$E$]: protocole expérimental
+\item[Exp]: protocole expérimental
 \end{description}}
 \only<2>{
 \begin{description}
   \item[$X$]: plus de contrôle
   \item[$Y$]: plus de maîtrise
-  \item[$E$]: plus de formalisation
+  \item[Exp]: plus de formalisation
 \end{description}}
 \end{frame}
 
@@ -37,9 +37,9 @@ Compétition\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
-\node (i1) {X}; \&
+\node (i1) {$X$}; \&
 \node [terminal] (i2) {$p$}; \&
-\node (i3) {\alert{y}}; \\
+\node (i3) {\alert{$y$}}; \\
 };
 \begin{scope}[every path/.style=line]
   \path (i1) -- node [left] {} (i2);
@@ -49,8 +49,8 @@ Compétition\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
 \end{center}
 \vspace{.8cm}
 \begin{description}
-\item[$X$] en grande dimension
-\item[$y$] en petite dimension
+\item[$X$]: données observées (en grande dimension)
+\item[$y$]: labels (en petite dimension)
 \end{description}
 \end{frame}
 
@@ -59,10 +59,10 @@ Compétition\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
-\node (i1) {X}; \&
+\node (i1) {$X$}; \&
 \node [terminal] (i2) {$P$}; \&
 \node [terminal] (i3) {$C$}; \&
-\node (i4) {\alert<1>{y}}; \\
+\node (i4) {\alert<1>{$y$}}; \\
 };
 \begin{scope}[every path/.style=line]
   \path (i1) -- node [left] {} (i2);
@@ -72,8 +72,7 @@ Compétition\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
 \end{center}
 \vspace{.8cm}
 \begin{description}
-\item[$X$] en grande dimension
-\item[$L$] ..., aussi finalement
+\item[$L$] données projetées dans un espace latent
 \item[but]: $X_j=D(X_i)$, $L_j=d(L_i) \text{ ssi } y_j=y_i$
 \item[$D$]: grande déformation
 \item[$d$]: petite déformation
@@ -85,10 +84,10 @@ Compétition\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
   \begin{tikzpicture}[mystyle]
   \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
   {
-  \node (i1) {X}; \&
+  \node (i1) {$X$}; \&
   \node [terminal] (i2) {$P$}; \&
   \node [terminal] (i3) {$C$}; \&
-  \node (i4) {\alert<1>{y}}; \\
+  \node (i4) {\alert<1>{$y$}}; \\
   };
   \begin{scope}[every path/.style=line]
     \path (i1) -- node [left] {} (i2);
@@ -114,10 +113,10 @@ $$ |L_i-L_j| < |L_i-L_k| \text{ ssi } y_i=y_j \forall k | y_k \neq y_i $$
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
-\node (i1) {\only<1>{X}\only<2>{Son}}; \&
+\node (i1) {\only<1>{$X$}\only<2>{Son}}; \&
 \node [terminal] (i2) {$P$}; \&
 \node [terminal] (i3) {$C$}; \&
-\node (i4) {\only<1>{y}\only<2>{label}}; \\
+\node (i4) {\only<1>{$y$}\only<2>{label}}; \\
 };
 \begin{scope}[every path/.style=line]
   \path (i1) -- node [left] {} (i2);
@@ -127,6 +126,7 @@ $$ |L_i-L_j| < |L_i-L_k| \text{ ssi } y_i=y_j \forall k | y_k \neq y_i $$
 \end{tikzpicture}
 \end{center}
 \vspace{.8cm}
+\only<2>{
 \begin{description}
 \item[$P$]: module de \og perception \fg
 \begin{itemize}
@@ -139,6 +139,7 @@ $$ |L_i-L_j| < |L_i-L_k| \text{ ssi } y_i=y_j \forall k | y_k \neq y_i $$
     \item fusion
 \end{itemize}
 \end{description}
+}
 \end{frame}
 
 
@@ -167,10 +168,10 @@ Acoustic Scenes and Events (DCASE)}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
-\& \node (i4) {E};  \& \\
-\node (i1) {\alert<6>{X}}; \&
+\& \node (i4) {Exp};  \& \\
+\node (i1) {\alert<6>{Son}}; \&
 \visible<2->{\node [terminal] (i2) {\only<2>{$p_1$}\only<3>{$p_2$}\only<4>{$p_n$}\only<5->{$p$}}; \&
-\node  (i3) {y};} \\
+\node  (i3) {label};} \\
 };
 \node (box) [draw, line width=1pt, rounded corners, fit =  (i1) (i4) (i3)] {};
 \visible<2->{
@@ -181,14 +182,15 @@ Acoustic Scenes and Events (DCASE)}
 \end{tikzpicture}
 \end{center}
 \vspace{.8cm}
-\visible<1-3>{
+\only<1-3>{
 L’organisateur de la compétition
 \begin{itemize}
 \item prépare les données ainsi qu'une description du problème
 \item fournit des méthodes d'évaluation
+\item ...
 \end{itemize}
 }
-\visible<4->{
+\only<5->{
 \begin{itemize}
 \item Alternative à l'approche \og mon outil, mon jeu de données, ma métrique \fg
 \item Spécification de l'expérimentation  \og clés en main \fg
@@ -238,10 +240,10 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
   \begin{tikzpicture}[mystyle]
   \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
   {
-  \& \node (i4) {E};  \& \\
-  \node (i1) {X}; \&
+  \& \node (i4) {Exp};  \& \\
+  \node (i1) {Son}; \&
   \node [terminal] (i2) {p}; \&
-  \node  (i3) {\alert{y}}; \\
+  \node  (i3) {\alert{label}}; \\
   };
   \node (box) [draw, line width=1pt, rounded corners, fit =  (i1) (i4) (i3)] {};
   \begin{scope}[every path/.style=line]
@@ -258,17 +260,17 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
 \end{frame}
 
 \begin{frame}{Caractérisation des environnements sonores urbains (ANR CENSE)}
-  \begin{minipage}{.5\columnwidth}
-    \begin{itemize}
+\only<1>{
+\begin{itemize}
     \item les qualifiants perceptifs de haut niveau comme l'agrément sont corrélés au temps de présence perçu des sources
-    \item prédiction de ces valeurs perceptives par des approches neuronales
-    \end{itemize}
-  \end{minipage}
-  \begin{minipage}{.4\columnwidth}
+    \item prédiction de ces valeurs perceptives par des approches neuronales profondes
+\end{itemize}
+}
+\only<2>{
     \begin{center}
-    \includegraphics[width=\columnwidth]{figures/block} \\
+    \includegraphics[width=.7\columnwidth]{figures/block}
     \end{center}
-  \end{minipage}
+}
 \footfullcitenomarkleft{gontierActa}
 \end{frame}
 
@@ -298,10 +300,10 @@ $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la dé
   \begin{tikzpicture}[mystyle]
   \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
   {
-  \& \node (i4) {\alert{E}};  \& \\
-  \node (i1) {X}; \&
-  \node [terminal] (i2) {p}; \&
-  \node  (i3) {y}; \\
+  \& \node (i4) {\alert{Exp}};  \& \\
+  \node (i1) {$X$}; \&
+  \node [terminal] (i2) {$p$}; \&
+  \node  (i3) {$y$}; \\
   };
   \node (box) [draw, line width=1pt, rounded corners, fit =  (i1) (i4) (i3)] {};
   \begin{scope}[every path/.style=line]
@@ -344,10 +346,10 @@ ExpLanes, un environnement logiciel qui facilite:
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
-\& \node (i4) {\alert{E}};  \& \\
-\node (i1) {\alert{X}}; \&
-\node [terminal] (i2) {p}; \&
-\node  (i3) {\alert{y}}; \\
+\& \node (i4) {\alert{Exp}};  \& \\
+\node (i1) {\alert{$X$}}; \&
+\node [terminal] (i2) {$p$}; \&
+\node  (i3) {\alert{$y$}}; \\
 };
 \node (box) [draw, line width=1pt, rounded corners, fit =  (i1) (i4) (i3)] {};
 \begin{scope}[every path/.style=line]
@@ -360,6 +362,6 @@ ExpLanes, un environnement logiciel qui facilite:
 \begin{description}
 \item[$X$] plus de contrôle : données simulées
 \item[$y$] plus de maîtrise : collaboration avec les communautés expertes
-\item[$E$] plus de formalisation : développement d'explanes
+\item[Exp] plus de formalisation : développement d'explanes
 \end{description}
 \end{frame}
