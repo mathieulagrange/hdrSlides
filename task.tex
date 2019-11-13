@@ -1,6 +1,6 @@
 \begin{frame}{Traitement du signal audio-numérique}
 \begin{block}{Besoins et problématiques associées}
-\structure{Transmission}: Codage \\
+\structure{Transmission}: Codage compressif \\
 \structure{Indexation}: Recherche d'Information (IR) \\
 \structure{Création}: Synthèse sonore
 \end{block}
@@ -21,7 +21,7 @@
 \end{itemize}
 \end{block}
 \begin{block}{Types de compacité}
-\structure{Codage}: compacité signal \\ % ($ y \in \mathbb{R}^{5000}$) \\
+\structure{Codage compressif}: compacité signal \\ % ($ y \in \mathbb{R}^{5000}$) \\
 \structure{Recherche d'information}: compacité sémantique \\ %  ($ y \in \mathbb{N}^{100}$) \\
 \structure{Synthèse}: compacité \alert{\og} \structure{signalo-sémantique} \alert{\fg} \\ %  ($ y \in \mathbb{R}^{100}$)
 \end{block}
@@ -55,25 +55,25 @@ $$ f[m, t] = \sum_{n = - \infty}^{\infty} x[n] w[n-t] \mathrm{e}^{\frac{-2 \math
 \begin{frame}{Spectrogramme}
 \begin{center}
 \only<1>{\includegraphics[width=.8\columnwidth]{figures/soloTime}}
-\only<2>{\includegraphics[width=1.1\columnwidth]{figures/soloSpec}}
-
-\includesound{sounds/solo.mp3}
+\only<2>{\includegraphics[width=\columnwidth]{figures/soloSpec}}
+\vspace{.4cm}
+\hspace{.2cm}\includesound{sounds/solo.mp3}
 \end{center}
 \end{frame}
 
-\begin{frame}{Typologie des évènements sonores}
-  \begin{tabular}{l|cc}
-    & \multicolumn{2}{c}{structure} \\
-  \structure{sons}  & horizontale & verticale \\
-    \hline
-    \structure{de parole} & sons voisés & sons plosifs  \\
-    & <a>, <o> &  <pe>, <qe> \\
-    \structure{d'animaux} & chants & clics  \\
-    \structure{musicaux} & chant lyrique & percussions \\
-    \structure{mécaniques} & ventilation & marteau piqueur \\
-    \structure{environnementaux} & vent & gouttes de pluie \\
-  \end{tabular}
-\end{frame}
+% \begin{frame}{Typologie des évènements sonores}
+%   \begin{tabular}{l|cc}
+%     & \multicolumn{2}{c}{structure} \\
+%   \structure{sons}  & horizontale & verticale \\
+%     \hline
+%     \structure{de parole} & sons voisés & sons plosifs  \\
+%     & <a>, <o> &  <pe>, <qe> \\
+%     \structure{d'animaux} & chants & clics  \\
+%     \structure{musicaux} & chant lyrique & percussions \\
+%     \structure{mécaniques} & ventilation & marteau piqueur \\
+%     \structure{environnementaux} & vent & gouttes de pluie \\
+%   \end{tabular}
+% \end{frame}
 
 \begin{frame}{Compromis temps/fréquence}
 	$\hookrightarrow{}$ mitiger cette contrainte imposée par l'approche court-terme par l'utilisation d'\alert{\textit{a priori}} sur les sources d'intérêt.

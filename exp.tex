@@ -1,4 +1,4 @@
-Compétition\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
+\begin{frame}{\only<1>{\'Expérimentation}}
 \begin{center}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
@@ -23,16 +23,10 @@ Compétition\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
 \item[$Y$]: sortie, prédiction
 \item[Exp]: protocole expérimental
 \end{description}}
-\only<2>{
-\begin{description}
-  \item[$X$]: plus de contrôle
-  \item[$Y$]: plus de maîtrise
-  \item[Exp]: plus de formalisation
-\end{description}}
 \end{frame}
 
 
-\begin{frame}{Tâche: recherche d'information (IR)}
+\begin{frame}{Recherche d'information (IR)}
 \begin{center}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
@@ -72,7 +66,7 @@ Compétition\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
 \end{center}
 \vspace{.8cm}
 \begin{description}
-\item[$L$] données projetées dans un espace latent
+\item[$L$] représentation de $X$ dans un espace latent
 \item[but]: $X_j=D(X_i)$, $L_j=d(L_i) \text{ ssi } y_j=y_i$
 \item[$D$]: grande déformation
 \item[$d$]: petite déformation
@@ -161,6 +155,30 @@ Acoustic Scenes and Events (DCASE)}
 \end{block}
 \end{frame}
 
+\begin{frame}{Contributions}
+\begin{center}
+\begin{tikzpicture}[mystyle]
+\matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
+{
+\& \node (i4) {Exp};  \& \\
+\node (i1) {Son}; \&
+\node [terminal] (i2) {$p$}; \&
+\node  (i3) {label}; \\
+};
+\node (box) [draw, line width=1pt, rounded corners, fit =  (i1) (i4) (i3)] {};
+\begin{scope}[every path/.style=line]
+  \path (i1) -- node [left] {} (i2);
+  \path (i2) -- node [right] {} (i3);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\vspace{.8cm}
+\begin{enumerate}
+  \item \structure{Son}: plus de contrôle
+  \item \structure{label}: plus de maîtrise
+  \item \structure{Exp}: plus de formalisation
+\end{enumerate}
+\end{frame}
 
 
 \begin{frame}{Compétitions en IR}
@@ -169,7 +187,7 @@ Acoustic Scenes and Events (DCASE)}
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
 \& \node (i4) {Exp};  \& \\
-\node (i1) {\alert<6>{Son}}; \&
+\node (i1) {Son}; \&
 \visible<2->{\node [terminal] (i2) {\only<2>{$p_1$}\only<3>{$p_2$}\only<4>{$p_n$}\only<5->{$p$}}; \&
 \node  (i3) {label};} \\
 };
@@ -182,7 +200,7 @@ Acoustic Scenes and Events (DCASE)}
 \end{tikzpicture}
 \end{center}
 \vspace{.8cm}
-\only<1-3>{
+\only<1-4>{
 L’organisateur de la compétition
 \begin{itemize}
 \item prépare les données ainsi qu'une description du problème
