@@ -1,5 +1,5 @@
 \begin{frame}{Traitement du signal audio-numérique}
-\begin{block}{Besoins et tâches associées}
+\begin{block}{Besoins et problématiques associées}
 \structure{Transmission}: Codage \\
 \structure{Indexation}: Recherche d'Information (IR) \\
 \structure{Création}: Synthèse sonore
@@ -27,7 +27,7 @@
 \end{block}
 \end{frame}
 
-\begin{frame}{Tâche : Codage par transformée}
+\begin{frame}{Codage compressif par transformée}
 $$y = C(x) | \tilde{x} = C^{-1}(y), P_e(x) \simeq P_e(\tilde{x})$$
 \begin{itemize}
 \item $C$ : Quantification adaptative d'un équivalent de la Transformée de Fourier à Court Terme (TFCT)
@@ -55,7 +55,7 @@ $$ f[m, t] = \sum_{n = - \infty}^{\infty} x[n] w[n-t] \mathrm{e}^{\frac{-2 \math
 \begin{frame}{Spectrogramme}
 \begin{center}
 \only<1>{\includegraphics[width=.8\columnwidth]{figures/soloTime}}
-\only<2>{\includegraphics[width=.8\columnwidth]{figures/soloSpec}}
+\only<2>{\includegraphics[width=1.1\columnwidth]{figures/soloSpec}}
 
 \includesound{sounds/solo.mp3}
 \end{center}

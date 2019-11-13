@@ -1,4 +1,4 @@
-\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
+Compétition\begin{frame}{\only<1>{\'Expérimentation}\only<2>{Contributions}}
 \begin{center}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
@@ -114,10 +114,10 @@ $$ |L_i-L_j| < |L_i-L_k| \text{ ssi } y_i=y_j \forall k | y_k \neq y_i $$
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
 {
-\node (i1) {X}; \&
+\node (i1) {\only<1>{X}\only<2>{Son}}; \&
 \node [terminal] (i2) {$P$}; \&
 \node [terminal] (i3) {$C$}; \&
-\node (i4) {y}; \\
+\node (i4) {\only<1>{y}\only<2>{label}}; \\
 };
 \begin{scope}[every path/.style=line]
   \path (i1) -- node [left] {} (i2);
@@ -146,7 +146,7 @@ $$ |L_i-L_j| < |L_i-L_k| \text{ ssi } y_i=y_j \forall k | y_k \neq y_i $$
 \begin{block}{Music Information Retrieval (MIR)}
 \begin{itemize}
 \item 2000 - --
-\item Challenge: 18 tâches  (Mirex)
+\item Compétition: 18 tâches  (Mirex)
 \item Conference : 100 articles (Ismir)
 \end{itemize}
 \end{block}
@@ -154,7 +154,7 @@ $$ |L_i-L_j| < |L_i-L_k| \text{ ssi } y_i=y_j \forall k | y_k \neq y_i $$
 Acoustic Scenes and Events (DCASE)}
 \begin{itemize}
 \item 2013 - --
-\item Challenge: 7 tâches
+\item Compétition: 7 tâches
 \item Workshop: 50 articles
 \end{itemize}
 \end{block}
@@ -162,7 +162,7 @@ Acoustic Scenes and Events (DCASE)}
 
 
 
-\begin{frame}{Challenges en IR}
+\begin{frame}{Compétitions en IR}
 \begin{center}
 \begin{tikzpicture}[mystyle]
 \matrix [column sep=10mm,row sep=5mm,ampersand replacement=\&]
@@ -181,6 +181,13 @@ Acoustic Scenes and Events (DCASE)}
 \end{tikzpicture}
 \end{center}
 \vspace{.8cm}
+\visible<1-3>{
+L’organisateur de la compétition
+\begin{itemize}
+\item prépare les données ainsi qu'une description du problème
+\item fournit des méthodes d'évaluation
+\end{itemize}
+}
 \visible<4->{
 \begin{itemize}
 \item Alternative à l'approche \og mon outil, mon jeu de données, ma métrique \fg
@@ -190,7 +197,7 @@ Acoustic Scenes and Events (DCASE)}
 }
 \end{frame}
 
-\begin{frame}{Challenges en crise ?}
+\begin{frame}{Compétitions en crise ?}
 \begin{itemize}
     \item cauchemard des métriques
     \item \og la fin justifie les moyens \fg
@@ -205,7 +212,7 @@ Acoustic Scenes and Events (DCASE)}
 $\hookrightarrow{}$ placer l'effort sur un questionnement plutôt que sur la démonstration d'un outil
 \end{frame}
 
-\begin{frame}{Design de Challenge}
+\begin{frame}{Design de Compétition}
 \begin{block}{Organisation d'une tâche DCASE (2013, 2016)}
 \begin{itemize}
 \item Tâche de détection d'évènements
