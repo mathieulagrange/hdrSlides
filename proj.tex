@@ -173,7 +173,24 @@ Pourquoi travailler sur la synthèse sonore ?
 \end{block}
 \end{frame}
 
-\begin{frame}{\only<1>{Conclusion}\only<9>{Un travail en interdisciplinarité} \only<2>{France Télécom R\&D (2001-04)}\only<3>{Bx (2004-06)}\only<4>{Uvic (2006-07)}\only<5>{McGill (2007-08)}\only<6>{Télécom (2008-09)}\only<7>{Ircam (2009-13)}\only<8>{Ls2n (2013-19)}}
+\begin{frame}{Thèmes}
+\begin{tikzpicture}[mystyle]
+    \matrix [column sep=20mm,row sep=15mm,ampersand replacement=\&]
+    {
+    \node (imu) {\structure{Musicologie}}; \&
+    \node  (ipe) {\structure{Perception}}; \&
+    \node  (id) {\structure{Design}}; \\
+    \node [align=center](ima) {\structure{Maths} \\ \structure{Appli}}; \&
+    \node [terminal,align=center] (its) {Traitement \\du signal\\ audio}; \&
+    \node  (iph) {\structure{Acoustique}}; \\
+    \node  {}; \&
+    \node  (ii) {\structure{Informatique}}; \&
+    \node   {}; \\
+    };
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{\only<1>{Thèmes}\only<9>{Un travail en interdisciplinarité} \only<2>{France Télécom R\&D (2001-04)}\only<3>{Bx (2004-06)}\only<4>{Uvic (2006-07)}\only<5>{McGill (2007-08)}\only<6>{Télécom (2008-09)}\only<7>{Ircam (2009-13)}\only<8>{Ls2n (2013-19)}}
   \begin{tikzpicture}[mystyle]
       \matrix [column sep=20mm,row sep=15mm,ampersand replacement=\&]
       {
@@ -182,13 +199,13 @@ Pourquoi travailler sur la synthèse sonore ?
       \node  (id) {\structure{Design}}; \\
       \node [align=center](ima) {\structure{Maths} \\ \structure{Appli}}; \&
       \node [terminal,align=center] (its) {Traitement \\du signal\\ audio}; \&
-      \node  (iph) {\structure{Physique}}; \\
+      \node  (iph) {\structure{Acoustique}}; \\
       \node  {}; \&
       \node  (ii) {\structure{Informatique}}; \&
       \node   {}; \\
       };
       \begin{scope}[every path/.style=line, font=\scriptsize]
-        \path (ima) -- node [above] {\only<7>{A. Cont}\only<6>{R. Badeau} \only<1,8>{E. Benetos}} (its);
+        \path (ima) -- node [above] {\only<7>{A. Cont}\only<6>{R. Badeau} \only<1>{E. Benetos}} (its);
             \path (ima) -- node [below] {\only<6>{G. Richard}\only<1>{J. Andèn}} (its);
         \path (imu) -- node [right] {\only<3>{M. Robine} \only<8>{G. Lafay} \only<1>{V. Lostanlen}} (its);
         \path (iph) -- node [above] {\only<2>{JB. Rault} \only<5>{P. Depalle} \only<7>{A. Roebel}\only<8>{JR. Gloaguen}  \only<1>{J. Picaut}} (its);
