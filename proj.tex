@@ -21,6 +21,7 @@
 \item<3>[x-Y]: synthèse
 \end{description}}
 \only<4>{
+Pourquoi trvailler sur la synthèse sonore ?
 \begin{itemize}
 \item attrait personnel pour l'inouï
 \item challenge
@@ -114,7 +115,7 @@
       \begin{description}
         \item[$P$]: invariance / stabilité
         \item[$c$]: conditionneur
-        \item[$V$]: vocodeur ($P^{-1}$)
+        \item[$V$]: vocodeur ($\tilde{P^{-1}}$)
 
       \end{description}
 \end{frame}
@@ -131,7 +132,7 @@
 \begin{itemize}
   \item Spécification des objectifs
   \begin{itemize}
-  \item mesure quantitatives de qualité perceptuelles
+  \item mesures quantitatives de qualité perceptuelles
   \item fonctions de coût perceptivement motivées
   \end{itemize}
 \item Synthèse audio neuronale
@@ -172,9 +173,9 @@
 \end{block}
 \end{frame}
 
-\begin{frame}{\only<1>{Carte thématique}\only<9>{Un travail en inter-disciplinarité} \only<2>{France Télécom R\&D (2001-04)}\only<3>{Bx (2004-06)}\only<4>{Uvic (2006-07)}\only<5>{McGill (2007-08)}\only<6>{Télécom (2008-09)}\only<7>{Ircam (2009-13)}\only<8>{Ls2n (2013-19)}}
+\begin{frame}{\only<1>{Conclusion}\only<9>{Un travail en inter-disciplinarité} \only<2>{France Télécom R\&D (2001-04)}\only<3>{Bx (2004-06)}\only<4>{Uvic (2006-07)}\only<5>{McGill (2007-08)}\only<6>{Télécom (2008-09)}\only<7>{Ircam (2009-13)}\only<8>{Ls2n (2013-19)}}
   \begin{tikzpicture}[mystyle]
-      \matrix [column sep=20mm,row sep=20mm,ampersand replacement=\&]
+      \matrix [column sep=20mm,row sep=15mm,ampersand replacement=\&]
       {
       \node (imu) {\structure{Musicologie}}; \&
       \node  (ipe) {\structure{Perception}}; \&
@@ -192,7 +193,7 @@
         \path (imu) -- node [right] {\only<3>{M. Robine} \only<8>{G. Lafay} \only<1>{V. Lostanlen}} (its);
         \path (iph) -- node [above] {\only<2>{JB. Rault} \only<5>{P. Depalle} \only<7>{A. Roebel}\only<8>{JR. Gloaguen}  \only<1>{J. Picaut}} (its);
         \path (iph) -- node [below] {\only<5>{G. Scavone} } (its);
-        \path (ii) -- node [right] {\only<2-3>{S. Marchand}\only<4>{G. Tzanetakis}\only<6>{S. Essid}} (its);
+        \path [align=left] (ii) -- node [right] {\only<2-3>{S. Marchand}\only<4>{G. Tzanetakis}\only<6>{S. Essid \\ R. Foucard}\only<7>{M. Rossignol}} (its);
         \path [align=left] (id) -- node [right] {\only<1,8>{\hspace{.3cm}JF. Petiot}\only<1,7>{\\ N. Misdariis}} (its);
         \path [align=left] (ipe) -- node [right] {\only<5>{C. Guastavino}\only<1>{C. Lavandier}\only<1,8>{\\ A. Can}} (its);
         \end{scope}
